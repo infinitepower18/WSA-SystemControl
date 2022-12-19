@@ -50,6 +50,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -74,6 +82,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -182,15 +198,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:WSA System Control"
-        "ProductCode" = "8:{83170A78-7B27-4815-9775-23CA9F5594C6}"
-        "PackageCode" = "8:{9FD6F604-ACC9-4846-8A38-048626AB7BF6}"
+        "ProductCode" = "8:{F0557507-CD1D-46AF-9E54-FA27F58B0587}"
+        "PackageCode" = "8:{C2F7765E-CFD0-4A64-9E65-82DFF251F6FB}"
         "UpgradeCode" = "8:{AF19ACE4-D753-4794-8965-967BCF77165A}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:0.2.0"
+        "ProductVersion" = "8:0.2.1"
         "Manufacturer" = "8:infinitepower18"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -718,7 +734,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_27BDE3F33D93438985DD4689978A5D4C"
             {
-            "SourcePath" = "8:..\\WSA System Control\\obj\\Debug\\net7.0-windows10.0.22000.0\\apphost.exe"
+            "SourcePath" = "8:..\\WSA System Control\\obj\\Release\\net7.0-windows10.0.22000.0\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_035D626D9C474401A1CE12A7B1D23E08"
