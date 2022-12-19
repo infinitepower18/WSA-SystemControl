@@ -16,6 +16,9 @@
     <None Update="icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="icongrey.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="icongrey.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
