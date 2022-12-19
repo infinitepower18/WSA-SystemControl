@@ -31,7 +31,7 @@ namespace WSA_System_Control
         void Exit(object sender, EventArgs e)
         {
             notifyIcon.Visible = false;
-            Application.Exit();
+            Environment.Exit(0);
         }
         void startWSA(object sender, EventArgs e)
         {
