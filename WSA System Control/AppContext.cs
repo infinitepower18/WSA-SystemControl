@@ -11,13 +11,15 @@ namespace WSA_System_Control
     {
         NotifyIcon notifyIcon;
         ContextMenuStrip contextMenu;
+        Icon icon = new Icon("icon.ico");
+        Icon greyIcon = new Icon("icongrey.ico");
         public AppContext()
         {
             ToolStripMenuItem startMenuItem = new ToolStripMenuItem("Start WSA", Image.FromFile("icon.ico"), new EventHandler(startWSA));
             ToolStripMenuItem stopMenuItem = new ToolStripMenuItem("Stop WSA", Image.FromFile("icongrey.png"), new EventHandler(stopWSA));
             ToolStripMenuItem exitMenuItem = new ToolStripMenuItem("Exit", Image.FromFile("exit.png"), new EventHandler(Exit));
             notifyIcon = new NotifyIcon();
-            notifyIcon.Icon = new Icon("icon.ico");
+            notifyIcon.Icon = icon;
             contextMenu = new ContextMenuStrip();
             contextMenu.Items.Add(startMenuItem);
             contextMenu.Items.Add(stopMenuItem);
@@ -52,14 +54,14 @@ namespace WSA_System_Control
         private void mouseClick(object sender, EventArgs e)
         {
             MouseEventArgs mouseEventArgs = (MouseEventArgs)e;
-            if (mouseEventArgs.Button == MouseButtons.Left && contextMenu.Items[0].Enabled == false)
+            if (mouseEventArgs.Button == MouseButtons.Left & contextMenu.Items[0].Enabled == false)
             {
                 Process proc = new Process();
                 proc.StartInfo.CreateNoWindow = true;
                 proc.StartInfo.FileName = "CMD.exe";
                 proc.StartInfo.Arguments = "/C WSAClient /shutdown";
                 proc.Start();
-            } else if(mouseEventArgs.Button == MouseButtons.Left && contextMenu.Items[0].Enabled == true)
+            } else if(mouseEventArgs.Button == MouseButtons.Left & contextMenu.Items[0].Enabled == true)
             {
                 Process proc = new Process();
                 proc.StartInfo.CreateNoWindow = true;
@@ -77,7 +79,7 @@ namespace WSA_System_Control
                 {
                     contextMenu.Items[0].Enabled = true;
                     contextMenu.Items[1].Enabled = false;
-                    notifyIcon.Icon = new Icon("icongrey.ico");
+                    notifyIcon.Icon = greyIcon;
                     notifyIcon.Text = "WSA is off\nClick to turn on";
 
                 }
@@ -85,7 +87,7 @@ namespace WSA_System_Control
                 {
                     contextMenu.Items[0].Enabled = false;
                     contextMenu.Items[1].Enabled = true;
-                    notifyIcon.Icon = new Icon("icon.ico");
+                    notifyIcon.Icon = icon;
                     notifyIcon.Text = "WSA is on\nClick to turn off";
                 }
                 Thread.Sleep(1000);
