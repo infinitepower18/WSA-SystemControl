@@ -43,6 +43,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -59,6 +67,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -166,15 +182,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:WSA System Control"
-        "ProductCode" = "8:{4D3A544C-5A4C-485E-9C81-17873BBB9006}"
-        "PackageCode" = "8:{16C8BAF3-8055-4FC3-93CD-1134A29E6256}"
+        "ProductCode" = "8:{83170A78-7B27-4815-9775-23CA9F5594C6}"
+        "PackageCode" = "8:{9FD6F604-ACC9-4846-8A38-048626AB7BF6}"
         "UpgradeCode" = "8:{AF19ACE4-D753-4794-8965-967BCF77165A}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:0.1.0"
+        "ProductVersion" = "8:0.2.0"
         "Manufacturer" = "8:infinitepower18"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
