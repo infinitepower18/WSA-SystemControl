@@ -15,6 +15,7 @@ namespace WSA_System_Control
         ContextMenuStrip contextMenu;
         Icon icon = new Icon("icon.ico");
         Icon greyIcon = new Icon("icongrey.ico");
+        
         public AppContext()
         {
             ToolStripMenuItem startMenuItem = new ToolStripMenuItem("Start WSA", Image.FromFile("poweron.ico"), new EventHandler(startWSA));
@@ -24,8 +25,10 @@ namespace WSA_System_Control
             ToolStripMenuItem androidMenuItem = new ToolStripMenuItem("Android Settings", Image.FromFile("settings.ico"), new EventHandler(androidSettings));
             ToolStripSeparator separator = new ToolStripSeparator();
             ToolStripMenuItem exitMenuItem = new ToolStripMenuItem("Exit", Image.FromFile("exit.ico"), new EventHandler(Exit));
+            
             notifyIcon = new NotifyIcon();
             notifyIcon.Icon = icon;
+
             contextMenu = new ContextMenuStrip();
             contextMenu.Items.Add(startMenuItem);
             contextMenu.Items.Add(stopMenuItem);
@@ -34,17 +37,22 @@ namespace WSA_System_Control
             contextMenu.Items.Add(androidMenuItem);
             contextMenu.Items.Add(separator);
             contextMenu.Items.Add(exitMenuItem);
-            notifyIcon.ContextMenuStrip= contextMenu;
+            
+            notifyIcon.ContextMenuStrip = contextMenu;
             notifyIcon.Visible = true;
+            
             Thread t = new Thread(new ThreadStart(Monitor));
             t.Start();
+            
             notifyIcon.Click += mouseClick;
         }
+        
         void Exit(object sender, EventArgs e)
         {
             notifyIcon.Visible = false;
             Environment.Exit(0);
         }
+        
         void startWSA(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(new ProcessStartInfo
@@ -53,6 +61,7 @@ namespace WSA_System_Control
                 UseShellExecute = true
             });
         }
+        
         void stopWSA(object sender, EventArgs e)
         {
             Process proc = new Process();
@@ -61,6 +70,7 @@ namespace WSA_System_Control
             proc.StartInfo.Arguments = "/shutdown";
             proc.Start();
         }
+        
         void wsaFiles(object sender, EventArgs e)
         {
             Process proc = new Process();
@@ -69,6 +79,7 @@ namespace WSA_System_Control
             proc.StartInfo.Arguments = "/launch wsa://com.android.documentsui";
             proc.Start();
         }
+        
         void wsaSettings(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(new ProcessStartInfo
@@ -77,6 +88,7 @@ namespace WSA_System_Control
                 UseShellExecute = true
             });
         }
+        
         void androidSettings(object sender, EventArgs e)
         {
             Process proc = new Process();
@@ -85,6 +97,7 @@ namespace WSA_System_Control
             proc.StartInfo.Arguments = "/launch wsa://com.android.settings";
             proc.Start();
         }
+        
         private void mouseClick(object sender, EventArgs e)
         {
             MouseEventArgs mouseEventArgs = (MouseEventArgs)e;
@@ -101,6 +114,7 @@ namespace WSA_System_Control
                 });
             }
         }
+        
         void Monitor()
         {
             while (true)
