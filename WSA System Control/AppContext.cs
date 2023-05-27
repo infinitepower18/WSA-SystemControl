@@ -127,7 +127,7 @@ namespace WSA_System_Control
                     contextMenu.Items[0].Enabled = true;
                     contextMenu.Items[1].Enabled = false;
                     notifyIcon.Icon = greyIcon;
-                    notifyIcon.Text = "WSA is off\nClick to turn on";
+                    notifyIcon.Text = "WSA is off\nClick to turn on\nRight click for more options";
 
                 }
                 else
