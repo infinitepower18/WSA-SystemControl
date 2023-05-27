@@ -12,37 +12,82 @@ namespace WSA_System_Control
         
         public AppContext()
         {
-            ToolStripMenuItem startMenuItem = new ToolStripMenuItem("Start WSA", Image.FromFile("poweron.ico"), new EventHandler(startWSA));
-            ToolStripMenuItem stopMenuItem = new ToolStripMenuItem("Stop WSA", Image.FromFile("poweroff.ico"), new EventHandler(stopWSA));
-            ToolStripSeparator separator1 = new ToolStripSeparator();
-            ToolStripMenuItem filesMenuItem = new ToolStripMenuItem("WSA Files", Image.FromFile("folder.ico"), new EventHandler(wsaFiles));
-            ToolStripMenuItem wsaMenuItem = new ToolStripMenuItem("WSA Settings", Image.FromFile("icon.ico"), new EventHandler(wsaSettings));
-            ToolStripMenuItem androidMenuItem = new ToolStripMenuItem("Android Settings", Image.FromFile("settings.ico"), new EventHandler(androidSettings));
-            ToolStripSeparator separator2 = new ToolStripSeparator();
-            ToolStripMenuItem exitMenuItem = new ToolStripMenuItem("Exit", Image.FromFile("exit.ico"), new EventHandler(Exit));
-            
-            notifyIcon = new NotifyIcon();
-            notifyIcon.Icon = icon;
+            if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)+"\\Packages\\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe")==false)
+            {
+                if (Environment.OSVersion.Version.Build < 22000)
+                {
+                    Win10WSANotFound();
+                }
+                else
+                {
+                    Win11WSANotFound();
+                }
+            }
+            else
+            {
+                ToolStripMenuItem startMenuItem = new ToolStripMenuItem("Start WSA", Image.FromFile("poweron.ico"), new EventHandler(startWSA));
+                ToolStripMenuItem stopMenuItem = new ToolStripMenuItem("Stop WSA", Image.FromFile("poweroff.ico"), new EventHandler(stopWSA));
+                ToolStripSeparator separator1 = new ToolStripSeparator();
+                ToolStripMenuItem filesMenuItem = new ToolStripMenuItem("WSA Files", Image.FromFile("folder.ico"), new EventHandler(wsaFiles));
+                ToolStripMenuItem wsaMenuItem = new ToolStripMenuItem("WSA Settings", Image.FromFile("icon.ico"), new EventHandler(wsaSettings));
+                ToolStripMenuItem androidMenuItem = new ToolStripMenuItem("Android Settings", Image.FromFile("settings.ico"), new EventHandler(androidSettings));
+                ToolStripSeparator separator2 = new ToolStripSeparator();
+                ToolStripMenuItem exitMenuItem = new ToolStripMenuItem("Exit", Image.FromFile("exit.ico"), new EventHandler(Exit));
 
-            contextMenu = new ContextMenuStrip();
-            contextMenu.Items.Add(startMenuItem);
-            contextMenu.Items.Add(stopMenuItem);
-            contextMenu.Items.Add(separator1);
-            contextMenu.Items.Add(filesMenuItem);
-            contextMenu.Items.Add(wsaMenuItem);
-            contextMenu.Items.Add(androidMenuItem);
-            contextMenu.Items.Add(separator2);
-            contextMenu.Items.Add(exitMenuItem);
-            
-            notifyIcon.ContextMenuStrip = contextMenu;
-            notifyIcon.Visible = true;
-            
-            Thread t = new Thread(new ThreadStart(Monitor));
-            t.Start();
-            
-            notifyIcon.Click += mouseClick;
+                notifyIcon = new NotifyIcon();
+                notifyIcon.Icon = icon;
+
+                contextMenu = new ContextMenuStrip();
+                contextMenu.Items.Add(startMenuItem);
+                contextMenu.Items.Add(stopMenuItem);
+                contextMenu.Items.Add(separator1);
+                contextMenu.Items.Add(filesMenuItem);
+                contextMenu.Items.Add(wsaMenuItem);
+                contextMenu.Items.Add(androidMenuItem);
+                contextMenu.Items.Add(separator2);
+                contextMenu.Items.Add(exitMenuItem);
+
+                notifyIcon.ContextMenuStrip = contextMenu;
+                notifyIcon.Visible = true;
+
+                Thread t = new Thread(new ThreadStart(Monitor));
+                t.Start();
+
+                notifyIcon.Click += mouseClick;
+            }
         }
-        
+
+        private void Win11WSANotFound()
+        {
+            const string message =
+                "You need to install Windows Subsystem for Android before you can use this program." +
+                "\nPlease download Amazon Appstore from the Microsoft Store, which will install the subsystem." +
+                "\nChange your region setting to US if it's not available in your country.";
+            const string caption = "WSA not installed";
+            var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.OK,
+                                         MessageBoxIcon.Error);
+            if (result == DialogResult.OK)
+            {
+                Environment.Exit(0);
+            }
+        }
+
+        private void Win10WSANotFound()
+        {
+            const string message =
+                "WSA installation not detected" +
+                "\nWindows Subsystem for Android is not officially supported on Windows 10.";
+            const string caption = "WSA not installed";
+            var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.OK,
+                                         MessageBoxIcon.Error);
+            if (result == DialogResult.OK)
+            {
+                Environment.Exit(0);
+            }
+        }
+
         void Exit(object sender, EventArgs e)
         {
             notifyIcon.Visible = false;
