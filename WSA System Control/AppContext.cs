@@ -76,7 +76,7 @@ namespace WSA_System_Control
         private void Win10WSANotFound()
         {
             const string message =
-                "WSA installation not detected" +
+                "WSA installation not detected." +
                 "\nWindows Subsystem for Android is not officially supported on Windows 10.";
             const string caption = "WSA not installed";
             var result = MessageBox.Show(message, caption,
