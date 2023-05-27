@@ -15,10 +15,10 @@ namespace WSA_System_Control
         Icon greyIcon = new Icon("icongrey.ico");
         public AppContext()
         {
-            ToolStripMenuItem startMenuItem = new ToolStripMenuItem("Start WSA", Image.FromFile("icon.ico"), new EventHandler(startWSA));
-            ToolStripMenuItem stopMenuItem = new ToolStripMenuItem("Stop WSA", Image.FromFile("icongrey.ico"), new EventHandler(stopWSA));
-            ToolStripMenuItem filesMenuItem = new ToolStripMenuItem("WSA Files", Image.FromFile("settings.ico"), new EventHandler(wsaFiles));
-            ToolStripMenuItem wsaMenuItem = new ToolStripMenuItem("WSA Settings", Image.FromFile("settings.ico"), new EventHandler(wsaSettings));
+            ToolStripMenuItem startMenuItem = new ToolStripMenuItem("Start WSA", Image.FromFile("poweron.ico"), new EventHandler(startWSA));
+            ToolStripMenuItem stopMenuItem = new ToolStripMenuItem("Stop WSA", Image.FromFile("poweroff.ico"), new EventHandler(stopWSA));
+            ToolStripMenuItem filesMenuItem = new ToolStripMenuItem("WSA Files", Image.FromFile("folder.ico"), new EventHandler(wsaFiles));
+            ToolStripMenuItem wsaMenuItem = new ToolStripMenuItem("WSA Settings", Image.FromFile("icon.ico"), new EventHandler(wsaSettings));
             ToolStripMenuItem androidMenuItem = new ToolStripMenuItem("Android Settings", Image.FromFile("settings.ico"), new EventHandler(androidSettings));
             ToolStripMenuItem exitMenuItem = new ToolStripMenuItem("Exit", Image.FromFile("exit.ico"), new EventHandler(Exit));
             notifyIcon = new NotifyIcon();

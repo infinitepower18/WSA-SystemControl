@@ -16,6 +16,9 @@
     <None Update="exit.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="folder.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -23,6 +26,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="icongrey.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="poweroff.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="poweron.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="settings.ico">
