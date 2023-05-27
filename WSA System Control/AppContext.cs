@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WSA_System_Control
 {
@@ -88,18 +90,15 @@ namespace WSA_System_Control
             MouseEventArgs mouseEventArgs = (MouseEventArgs)e;
             if (mouseEventArgs.Button == MouseButtons.Left & contextMenu.Items[0].Enabled == false)
             {
-                Process proc = new Process();
-                proc.StartInfo.CreateNoWindow = true;
-                proc.StartInfo.FileName = "CMD.exe";
-                proc.StartInfo.Arguments = "/C WSAClient /launch wsa://com.android.settings";
-                proc.Start();
+                MethodInfo mi = typeof(NotifyIcon).GetMethod("ShowContextMenu", BindingFlags.Instance | BindingFlags.NonPublic);
+                mi.Invoke(notifyIcon, null);
             } else if(mouseEventArgs.Button == MouseButtons.Left & contextMenu.Items[0].Enabled == true)
             {
-                Process proc = new Process();
-                proc.StartInfo.CreateNoWindow = true;
-                proc.StartInfo.FileName = "CMD.exe";
-                proc.StartInfo.Arguments = "/C WSAClient /launch wsa://system";
-                proc.Start();
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = "wsa://system",
+                    UseShellExecute = true
+                });
             }
         }
         void Monitor()
@@ -120,7 +119,7 @@ namespace WSA_System_Control
                     contextMenu.Items[0].Enabled = false;
                     contextMenu.Items[1].Enabled = true;
                     notifyIcon.Icon = icon;
-                    notifyIcon.Text = "WSA is on\nClick to open Android Settings\nRight click to turn off";
+                    notifyIcon.Text = "WSA is on\nClick for more options";
                 }
                 Thread.Sleep(1000);
             }
