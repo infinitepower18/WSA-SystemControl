@@ -17,6 +17,8 @@ namespace WSA_System_Control
         {
             ToolStripMenuItem startMenuItem = new ToolStripMenuItem("Start WSA", Image.FromFile("icon.ico"), new EventHandler(startWSA));
             ToolStripMenuItem stopMenuItem = new ToolStripMenuItem("Stop WSA", Image.FromFile("icongrey.ico"), new EventHandler(stopWSA));
+            ToolStripMenuItem filesMenuItem = new ToolStripMenuItem("WSA Files", Image.FromFile("settings.ico"), new EventHandler(wsaFiles));
+            ToolStripMenuItem wsaMenuItem = new ToolStripMenuItem("WSA Settings", Image.FromFile("settings.ico"), new EventHandler(wsaSettings));
             ToolStripMenuItem androidMenuItem = new ToolStripMenuItem("Android Settings", Image.FromFile("settings.ico"), new EventHandler(androidSettings));
             ToolStripMenuItem exitMenuItem = new ToolStripMenuItem("Exit", Image.FromFile("exit.ico"), new EventHandler(Exit));
             notifyIcon = new NotifyIcon();
@@ -24,6 +26,8 @@ namespace WSA_System_Control
             contextMenu = new ContextMenuStrip();
             contextMenu.Items.Add(startMenuItem);
             contextMenu.Items.Add(stopMenuItem);
+            contextMenu.Items.Add(filesMenuItem);
+            contextMenu.Items.Add(wsaMenuItem);
             contextMenu.Items.Add(androidMenuItem);
             contextMenu.Items.Add(exitMenuItem);
             notifyIcon.ContextMenuStrip= contextMenu;
@@ -39,26 +43,42 @@ namespace WSA_System_Control
         }
         void startWSA(object sender, EventArgs e)
         {
-            Process proc = new Process();
-            proc.StartInfo.CreateNoWindow= true;
-            proc.StartInfo.FileName = "CMD.exe";
-            proc.StartInfo.Arguments = "/C WSAClient /launch wsa://system";
-            proc.Start();
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "wsa://system",
+                UseShellExecute = true
+            });
         }
         void stopWSA(object sender, EventArgs e)
         {
             Process proc = new Process();
             proc.StartInfo.CreateNoWindow = true;
-            proc.StartInfo.FileName = "CMD.exe";
-            proc.StartInfo.Arguments = "/C WSAClient /shutdown";
+            proc.StartInfo.FileName = "WSAClient.exe";
+            proc.StartInfo.Arguments = "/shutdown";
             proc.Start();
+        }
+        void wsaFiles(object sender, EventArgs e)
+        {
+            Process proc = new Process();
+            proc.StartInfo.CreateNoWindow = true;
+            proc.StartInfo.FileName = "WSAClient.exe";
+            proc.StartInfo.Arguments = "/launch wsa://com.android.documentsui";
+            proc.Start();
+        }
+        void wsaSettings(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "wsa-settings://",
+                UseShellExecute = true
+            });
         }
         void androidSettings(object sender, EventArgs e)
         {
             Process proc = new Process();
             proc.StartInfo.CreateNoWindow = true;
-            proc.StartInfo.FileName = "CMD.exe";
-            proc.StartInfo.Arguments = "/C WSAClient /launch wsa://com.android.settings";
+            proc.StartInfo.FileName = "WSAClient.exe";
+            proc.StartInfo.Arguments = "/launch wsa://com.android.settings";
             proc.Start();
         }
         private void mouseClick(object sender, EventArgs e)
