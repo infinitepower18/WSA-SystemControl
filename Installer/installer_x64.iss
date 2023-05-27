@@ -56,21 +56,7 @@ Name: startup; Description: "Run WSA System Control on Windows login"; GroupDesc
 
 [Files]
 Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\exit.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\folder.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\icon.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\icongrey.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\Microsoft.Windows.SDK.NET.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\poweroff.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\poweron.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\settings.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\WinRT.Runtime.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\WSA System Control.deps.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\WSA System Control.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\WSA System Control.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\WSA System Control.pdb"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\WSA System Control.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\app.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net7.0-windows10.0.19041.0\publish\win-x64\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Program Files (x86)\Inno Setup 6\netcorecheck.exe"; Flags: dontcopy noencryption
 Source: "C:\Program Files (x86)\Inno Setup 6\netcorecheck_x64.exe"; Flags: dontcopy noencryption
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
