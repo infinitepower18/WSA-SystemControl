@@ -20,6 +20,7 @@ namespace WSA_System_Control
             ToolStripMenuItem filesMenuItem = new ToolStripMenuItem("WSA Files", Image.FromFile("folder.ico"), new EventHandler(wsaFiles));
             ToolStripMenuItem wsaMenuItem = new ToolStripMenuItem("WSA Settings", Image.FromFile("icon.ico"), new EventHandler(wsaSettings));
             ToolStripMenuItem androidMenuItem = new ToolStripMenuItem("Android Settings", Image.FromFile("settings.ico"), new EventHandler(androidSettings));
+            ToolStripSeparator separator = new ToolStripSeparator();
             ToolStripMenuItem exitMenuItem = new ToolStripMenuItem("Exit", Image.FromFile("exit.ico"), new EventHandler(Exit));
             notifyIcon = new NotifyIcon();
             notifyIcon.Icon = icon;
@@ -29,6 +30,7 @@ namespace WSA_System_Control
             contextMenu.Items.Add(filesMenuItem);
             contextMenu.Items.Add(wsaMenuItem);
             contextMenu.Items.Add(androidMenuItem);
+            contextMenu.Items.Add(separator);
             contextMenu.Items.Add(exitMenuItem);
             notifyIcon.ContextMenuStrip= contextMenu;
             notifyIcon.Visible = true;
