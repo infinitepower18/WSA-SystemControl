@@ -62,5 +62,4 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
-* linguist-vendored
-*.cs linguist-vendored=false
+Installer/CodeDependencies.iss linguist-vendored
