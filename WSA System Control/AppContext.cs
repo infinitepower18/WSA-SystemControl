@@ -32,6 +32,7 @@ namespace WSA_System_Control
                 ToolStripMenuItem wsaMenuItem = new ToolStripMenuItem("WSA Settings", Image.FromFile("icon.ico"), new EventHandler(wsaSettings));
                 ToolStripMenuItem androidMenuItem = new ToolStripMenuItem("Android Settings", Image.FromFile("settings.ico"), new EventHandler(androidSettings));
                 ToolStripSeparator separator2 = new ToolStripSeparator();
+                ToolStripMenuItem updateMenuItem = new ToolStripMenuItem("Check for updates", Image.FromFile("update.ico"), new EventHandler(checkForUpdates));
                 ToolStripMenuItem exitMenuItem = new ToolStripMenuItem("Exit", Image.FromFile("exit.ico"), new EventHandler(Exit));
 
                 notifyIcon = new NotifyIcon();
@@ -45,6 +46,7 @@ namespace WSA_System_Control
                 contextMenu.Items.Add(wsaMenuItem);
                 contextMenu.Items.Add(androidMenuItem);
                 contextMenu.Items.Add(separator2);
+                contextMenu.Items.Add(updateMenuItem);
                 contextMenu.Items.Add(exitMenuItem);
 
                 notifyIcon.ContextMenuStrip = contextMenu;
@@ -102,7 +104,16 @@ namespace WSA_System_Control
                 UseShellExecute = true
             });
         }
-        
+
+        void checkForUpdates(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://github.com/infinitepower18/WSA-SystemControl/releases/latest",
+                UseShellExecute = true
+            });
+        }
+
         void stopWSA(object sender, EventArgs e)
         {
             Process proc = new Process();
