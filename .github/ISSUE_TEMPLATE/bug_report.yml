@@ -1,0 +1,55 @@
+name: Bug report
+description: Create a report to help improve WSA System Control
+title: "[BUG]"
+labels: bug
+
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is. Include screenshots if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include steps to reproduce the behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
+  - type: input
+    id: wsaversion
+    attributes:
+      label: WSA version
+      description: You can find the version in the WSA Settings app under About. Please also indicate whether you downloaded the official WSA build from MS Store or from some other source.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: WSA System Control version
+      description: You can find the application version by right clicking the icon and selecting About.
+    validations:
+      required: true
+  - type: input
+    id: winbuild
+    attributes:
+      label: Windows build number
+      description: You can find the build number by typing winver in the Windows search box.
+    validations:
+      required: true
+  - type: textarea
+    id: other
+    attributes:
+      label: Additional context
+      description: Add any other context about the problem here.
+    validations:
+      required: false
