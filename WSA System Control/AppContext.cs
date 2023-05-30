@@ -94,8 +94,8 @@ namespace WSA_System_Control
 
         private void aboutDialog(object sender, EventArgs e)
         {
-            const string message =
-                "WSA System Control v1.0.1" +
+            var message =
+                "WSA System Control v"+ Application.ProductVersion +
                 "\nA simple tasktray application that allows you to monitor the WSA status as well as start/stop the subsystem.";
             const string caption = "About";
             var result = MessageBox.Show(message, caption,
