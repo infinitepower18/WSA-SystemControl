@@ -32,6 +32,7 @@ namespace WSA_System_Control
                 ToolStripMenuItem wsaMenuItem = new ToolStripMenuItem("WSA Settings", Image.FromFile("icon.ico"), new EventHandler(wsaSettings));
                 ToolStripMenuItem androidMenuItem = new ToolStripMenuItem("Android Settings", Image.FromFile("settings.ico"), new EventHandler(androidSettings));
                 ToolStripSeparator separator2 = new ToolStripSeparator();
+                ToolStripMenuItem aboutMenuItem = new ToolStripMenuItem("About", Image.FromFile("info.ico"), new EventHandler(aboutDialog));
                 ToolStripMenuItem updateMenuItem = new ToolStripMenuItem("Check for updates", Image.FromFile("update.ico"), new EventHandler(checkForUpdates));
                 ToolStripMenuItem exitMenuItem = new ToolStripMenuItem("Exit", Image.FromFile("exit.ico"), new EventHandler(Exit));
 
@@ -46,6 +47,7 @@ namespace WSA_System_Control
                 contextMenu.Items.Add(wsaMenuItem);
                 contextMenu.Items.Add(androidMenuItem);
                 contextMenu.Items.Add(separator2);
+                contextMenu.Items.Add(aboutMenuItem);
                 contextMenu.Items.Add(updateMenuItem);
                 contextMenu.Items.Add(exitMenuItem);
 
@@ -88,6 +90,16 @@ namespace WSA_System_Control
             {
                 Environment.Exit(0);
             }
+        }
+
+        private void aboutDialog(object sender, EventArgs e)
+        {
+            const string message =
+                "WSA System Control v1.0.1" +
+                "\nA simple tasktray application that allows you to monitor the WSA status as well as start/stop the subsystem.";
+            const string caption = "About";
+            var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.OK);
         }
 
         void Exit(object sender, EventArgs e)

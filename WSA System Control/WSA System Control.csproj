@@ -29,6 +29,9 @@
     <None Update="icongrey.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="info.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="poweroff.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
