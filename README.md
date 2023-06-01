@@ -7,6 +7,6 @@ A simple tasktray application that allows you to monitor the WSA status as well 
 
 **NOTE:** Shutdown feature requires WSA running Android 13 or later.
 
-[Download](https://github.com/infinitepower18/WSA-SystemControl/releases/latest)
+[Download from GitHub](https://github.com/infinitepower18/WSA-SystemControl/releases/latest) | [Download from winget](https://winstall.app/apps/infinitepower18.WSASystemControl)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F1K06VY)
