@@ -26,5 +26,5 @@ jobs:
       run: dotnet restore
     - name: Build Project
       run: msbuild "WSA System Control.sln" /t:Restore
-    - name: Build MSIX Package
-      run: msbuild "WSCMSIX\WSCMSIX.wapproj" /p:Configuration=Release
+    #- name: Build MSIX Package
+    #  run: msbuild "WSCMSIX\WSCMSIX.wapproj" /p:Configuration=Release
