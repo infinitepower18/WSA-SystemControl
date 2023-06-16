@@ -39,23 +39,21 @@
         <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
+      <Extensions>
+        <desktop:Extension
+          Category="windows.startupTask"
+          EntryPoint="Windows.FullTrustApplication">
+          <desktop:StartupTask
+              TaskId="MyStartupId"
+              Enabled="true"
+              DisplayName="WSA System Control" />
+        </desktop:Extension>
+      </Extensions>
     </Application>
   </Applications>
 
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
   </Capabilities>
-
-  <Extensions>
-    <desktop:Extension>
-      Category="windows.startupTask"
-      Executable="WSA System Control\\WSA System Control.exe"
-      EntryPoint="Windows.FullTrustApplication">
-      <desktop:StartupTask
-          TaskId="MyStartupId"
-          Enabled="true"
-          DisplayName="WSA System Control" />
-    </desktop:Extension>
-  </Extensions>
   
 </Package>
