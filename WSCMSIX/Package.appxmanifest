@@ -8,7 +8,7 @@
 
   <Identity
     Name="46954GamenologyMedia.WSASystemControl"
-    Publisher="CN=Ahnaf"
+    Publisher="CN=091B3CC8-312A-4A38-8EAB-908DCCB09857"
     Version="1.0.2.0" />
 
   <Properties>
@@ -34,7 +34,7 @@
         DisplayName="WSA System Control"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
-        Square44x44Logo="Images\Square44x44Logo.png">
+        Square44x44Logo="Images\Square44x44Logo.png" Description="WSA System Control">
         <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
