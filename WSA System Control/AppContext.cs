@@ -9,7 +9,8 @@ namespace WSA_System_Control
         ContextMenuStrip contextMenu;
         Icon icon = new Icon("icon.ico");
         Icon greyIcon = new Icon("icongrey.ico");
-        
+        String installSource = "GitHub"; // Controls visibility of check for updates button. If installed from Microsoft Store, check for updates button is hidden. Change if necessary.
+
         public AppContext()
         {
             if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)+"\\Packages\\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe")==false)
@@ -33,7 +34,6 @@ namespace WSA_System_Control
                 ToolStripMenuItem androidMenuItem = new ToolStripMenuItem("Android Settings", Image.FromFile("settings.ico"), new EventHandler(androidSettings));
                 ToolStripSeparator separator2 = new ToolStripSeparator();
                 ToolStripMenuItem aboutMenuItem = new ToolStripMenuItem("About", Image.FromFile("info.ico"), new EventHandler(aboutDialog));
-                ToolStripMenuItem updateMenuItem = new ToolStripMenuItem("Check for updates", Image.FromFile("update.ico"), new EventHandler(checkForUpdates));
                 ToolStripMenuItem exitMenuItem = new ToolStripMenuItem("Exit", Image.FromFile("exit.ico"), new EventHandler(Exit));
 
                 notifyIcon = new NotifyIcon();
@@ -48,7 +48,11 @@ namespace WSA_System_Control
                 contextMenu.Items.Add(androidMenuItem);
                 contextMenu.Items.Add(separator2);
                 contextMenu.Items.Add(aboutMenuItem);
-                contextMenu.Items.Add(updateMenuItem);
+                if (installSource == "GitHub")
+                {
+                    ToolStripMenuItem updateMenuItem = new ToolStripMenuItem("Check for updates", Image.FromFile("update.ico"), new EventHandler(checkForUpdates));
+                    contextMenu.Items.Add(updateMenuItem);
+                }
                 contextMenu.Items.Add(exitMenuItem);
 
                 notifyIcon.ContextMenuStrip = contextMenu;
@@ -96,7 +100,7 @@ namespace WSA_System_Control
         {
             var message =
                 "WSA System Control v"+ Application.ProductVersion +
-                "\nA simple tasktray application that allows you to monitor the WSA status as well as start/stop the subsystem.";
+                "\nA simple tasktray application that allows you to monitor the WSA status as well as start/stop the subsystem.\n\nDownloaded from: " + installSource;
             const string caption = "About";
             var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.OK);
