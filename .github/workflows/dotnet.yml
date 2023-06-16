@@ -23,6 +23,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build Project
-      run: msbuild "WSA System Control.sln" /t:Restore
+      run: C:\Program%20Files\Microsoft%20Visual%20Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe "WSA System Control.sln" /t:Restore
     - name: Build MSIX Package
-      run: msbuild "WSCMSIX\WSCMSIX.wapproj" /p:Configuration=Release
+      run: C:\Program%20Files\Microsoft%20Visual%20Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe "WSCMSIX\WSCMSIX.wapproj" /p:Configuration=Release
