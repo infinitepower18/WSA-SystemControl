@@ -22,7 +22,7 @@ jobs:
         dotnet-version: 7.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    - name: Build Project
+      run: msbuild "WSA System Control.sln" /t:Restore
+    - name: Build MSIX Package
+      run: msbuild "WSCMSIX\WSCMSIX.wapproj" /p:Configuration=Release
