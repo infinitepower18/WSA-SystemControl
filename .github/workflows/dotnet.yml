@@ -20,9 +20,11 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.x
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.1
     - name: Restore dependencies
       run: dotnet restore
     - name: Build Project
-      run: & 'C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe' "WSA System Control.sln" /t:Restore
+      run: msbuild "WSA System Control.sln" /t:Restore
     - name: Build MSIX Package
-      run: & 'C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe' "WSCMSIX\WSCMSIX.wapproj" /p:Configuration=Release
+      run: msbuild "WSCMSIX\WSCMSIX.wapproj" /p:Configuration=Release
