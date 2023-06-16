@@ -8,8 +8,8 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>app.ico</ApplicationIcon>
-    <AssemblyVersion>1.0.1</AssemblyVersion>
-    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.2</AssemblyVersion>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
