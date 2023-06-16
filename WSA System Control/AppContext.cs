@@ -7,12 +7,17 @@ namespace WSA_System_Control
     {
         NotifyIcon notifyIcon;
         ContextMenuStrip contextMenu;
-        Icon icon = new Icon("icon.ico");
-        Icon greyIcon = new Icon("icongrey.ico");
         String installSource = "GitHub"; // Controls visibility of check for updates button. If installed from Microsoft Store, check for updates button is hidden. Change if necessary.
-
+        Icon icon;
+        Icon greyIcon;
         public AppContext()
         {
+            if (installSource == "Microsoft Store")
+            {
+                Directory.SetCurrentDirectory(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Packages\\46954GamenologyMedia.WSASystemControl_1.0.2.0_neutral__cjpp7y4c11e3w\\WSA System Control");
+            }
+            icon = new Icon("icon.ico");
+            greyIcon = new Icon("icongrey.ico");
             if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)+"\\Packages\\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe")==false)
             {
                 if (Environment.OSVersion.Version.Build < 22000)
