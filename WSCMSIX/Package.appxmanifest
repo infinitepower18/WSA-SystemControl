@@ -44,7 +44,7 @@
           Category="windows.startupTask"
           EntryPoint="Windows.FullTrustApplication">
           <desktop:StartupTask
-              TaskId="MyStartupId"
+              TaskId="WSCStartup"
               Enabled="true"
               DisplayName="WSA System Control" />
         </desktop:Extension>
