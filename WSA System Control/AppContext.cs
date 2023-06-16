@@ -14,7 +14,7 @@ namespace WSA_System_Control
         {
             if (installSource == "Microsoft Store")
             {
-                Directory.SetCurrentDirectory(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Packages\\46954GamenologyMedia.WSASystemControl_1.0.2.0_neutral__cjpp7y4c11e3w\\WSA System Control");
+                Directory.SetCurrentDirectory(Windows.ApplicationModel.Package.Current.InstalledLocation.Path + "\\WSA System Control");
             }
             icon = new Icon("icon.ico");
             greyIcon = new Icon("icongrey.ico");
