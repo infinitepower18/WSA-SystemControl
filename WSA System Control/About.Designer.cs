@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             button1 = new Button();
             button2 = new Button();
             linkLabel1 = new LinkLabel();
@@ -36,7 +37,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(393, 135);
+            button1.Location = new Point(398, 88);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 0;
@@ -46,7 +47,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(312, 135);
+            button2.Location = new Point(317, 88);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 1;
@@ -57,9 +58,9 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(12, 143);
+            linkLabel1.Location = new Point(12, 92);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(60, 15);
+            linkLabel1.Size = new Size(45, 15);
             linkLabel1.TabIndex = 2;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Donate";
@@ -68,17 +69,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(16, 51);
+            label1.Location = new Point(12, 22);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(544, 45);
             label1.TabIndex = 3;
-            label1.Text = "WSA System Control v1.0.2";
+            label1.Text = "WSA System Control v" + Application.ProductVersion +
+                "\nA simple tasktray application that allows you to monitor the WSA status as well as\nstart/stop the subsystem.";
             // 
             // About
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(480, 170);
+            ClientSize = new Size(485, 118);
             Controls.Add(label1);
             Controls.Add(linkLabel1);
             Controls.Add(button2);
