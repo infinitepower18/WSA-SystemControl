@@ -73,8 +73,8 @@
             label1.Name = "label1";
             label1.Size = new Size(544, 45);
             label1.TabIndex = 3;
-            label1.Text = "WSA System Control v" + Application.ProductVersion +
-                "\nA simple tasktray application that allows you to monitor the WSA status as well as\nstart/stop the subsystem.";
+            label1.Text = resources.GetString("label1.Text");
+            label1.Text = String.Format(label1.Text,Application.ProductVersion);
             // 
             // About
             // 
