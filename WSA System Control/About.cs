@@ -18,6 +18,7 @@ namespace WSA_System_Control
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.Icon = new Icon("app.ico");
         }
 
         private void button1_Click(object sender, EventArgs e)
