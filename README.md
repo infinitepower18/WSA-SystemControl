@@ -6,9 +6,9 @@
 # WSA System Control
 A simple tasktray application that allows you to monitor the WSA status as well as start/stop the subsystem. You can also launch the WSA Settings app, the Android Settings app and the Files app right from the menu.
 
-<img width="340" alt="image" src="https://github.com/infinitepower18/WSA-SystemControl/assets/44692189/304fdbd8-ffd7-4127-96d2-23adf672724c">
-
 The icon on the system tray changes depending on the WSA status.
+
+<img width="340" alt="image" src="https://github.com/infinitepower18/WSA-SystemControl/assets/44692189/304fdbd8-ffd7-4127-96d2-23adf672724c">
 
 ## Download
 Operating System|Source
