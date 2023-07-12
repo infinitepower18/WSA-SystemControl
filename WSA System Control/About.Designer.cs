@@ -1,4 +1,7 @@
-﻿namespace WSA_System_Control
+﻿using System.Reflection;
+using System.Resources;
+
+namespace WSA_System_Control
 {
     partial class About
     {
@@ -28,7 +31,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
+            ResourceManager rm = new ResourceManager("WSA_System_Control.Resources.Strings", Assembly.GetExecutingAssembly());
             button1 = new Button();
             button2 = new Button();
             linkLabel1 = new LinkLabel();
@@ -73,7 +76,7 @@
             label1.Name = "label1";
             label1.Size = new Size(544, 45);
             label1.TabIndex = 3;
-            label1.Text = resources.GetString("label1.Text");
+            label1.Text = rm.GetString("AboutDescription");
             label1.Text = String.Format(label1.Text,Application.ProductVersion);
             // 
             // About

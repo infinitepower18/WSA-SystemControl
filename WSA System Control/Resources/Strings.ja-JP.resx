@@ -121,7 +121,8 @@
     <value>概要</value>
   </data>
   <data name="AboutDescription" xml:space="preserve">
-    <value>WSA の状態を監視し、WSA を 起動／終了できるシンプルなタスクトレイアプリ</value>
+    <value>WSA System Control v{0}
+WSA の状態を監視し、WSA を 起動／終了できるシンプルなタスクトレイアプリ</value>
   </data>
   <data name="AlreadyRunning" xml:space="preserve">
     <value>WSA System Control は既に実行されています！</value>
