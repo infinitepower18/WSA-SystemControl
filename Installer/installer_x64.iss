@@ -5,7 +5,7 @@
 #include "CodeDependencies.iss"
 
 #define MyAppName "WSA System Control"
-#define MyAppVersion "1.0.2"
+#define MyAppVersion "1.0.3"
 #define MyAppPublisher "infinitepower18"
 #define MyAppURL "https://github.com/infinitepower18/WSA-SystemControl"
 #define MyAppUpdateURL "https://github.com/infinitepower18/WSA-SystemControl/releases/latest"
