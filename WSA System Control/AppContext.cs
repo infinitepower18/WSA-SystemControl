@@ -9,12 +9,11 @@ namespace WSA_System_Control
         NotifyIcon notifyIcon;
         ResourceManager rm = new ResourceManager("WSA_System_Control.Resources.Strings", Assembly.GetExecutingAssembly());
         ContextMenuStrip contextMenu;
-        String installSource = "GitHub"; // Controls visibility of check for updates button. If installed from Microsoft Store, check for updates button is hidden. Change if necessary.
         Icon icon;
         Icon greyIcon;
         public AppContext()
         {
-            if (installSource == "Microsoft Store")
+            if (IsPackaged())
             {
                 Directory.SetCurrentDirectory(Windows.ApplicationModel.Package.Current.InstalledLocation.Path + "\\WSA System Control");
             }
@@ -55,7 +54,7 @@ namespace WSA_System_Control
                 contextMenu.Items.Add(androidMenuItem);
                 contextMenu.Items.Add(separator2);
                 contextMenu.Items.Add(aboutMenuItem);
-                if (installSource == "GitHub")
+                if (!IsPackaged())
                 {
                     ToolStripMenuItem updateMenuItem = new ToolStripMenuItem(rm.GetString("CheckUpdates"), Image.FromFile("Icons\\update.ico"), new EventHandler(checkForUpdates));
                     contextMenu.Items.Add(updateMenuItem);
@@ -69,6 +68,20 @@ namespace WSA_System_Control
                 t.Start();
 
                 notifyIcon.Click += mouseClick;
+            }
+        }
+
+        internal static bool IsPackaged()
+        {
+            try
+            {
+                // If we have a package ID then we are running in a packaged context
+                var dummy = Windows.ApplicationModel.Package.Current.Id;
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 
