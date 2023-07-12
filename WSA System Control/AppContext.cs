@@ -1,11 +1,13 @@
 ﻿using System.Diagnostics;
 using System.Reflection;
+using System.Resources;
 
 namespace WSA_System_Control
 {
     internal class AppContext : ApplicationContext
     {
         NotifyIcon notifyIcon;
+        ResourceManager rm = new ResourceManager("WSA_System_Control.Resources.Strings", Assembly.GetExecutingAssembly());
         ContextMenuStrip contextMenu;
         String installSource = "GitHub"; // Controls visibility of check for updates button. If installed from Microsoft Store, check for updates button is hidden. Change if necessary.
         Icon icon;
@@ -31,15 +33,15 @@ namespace WSA_System_Control
             }
             else
             {
-                ToolStripMenuItem startMenuItem = new ToolStripMenuItem("Start WSA", Image.FromFile("poweron.ico"), new EventHandler(startWSA));
-                ToolStripMenuItem stopMenuItem = new ToolStripMenuItem("Stop WSA", Image.FromFile("poweroff.ico"), new EventHandler(stopWSA));
+                ToolStripMenuItem startMenuItem = new ToolStripMenuItem(rm.GetString("StartWSA"), Image.FromFile("poweron.ico"), new EventHandler(startWSA));
+                ToolStripMenuItem stopMenuItem = new ToolStripMenuItem(rm.GetString("StopWSA"), Image.FromFile("poweroff.ico"), new EventHandler(stopWSA));
                 ToolStripSeparator separator1 = new ToolStripSeparator();
-                ToolStripMenuItem filesMenuItem = new ToolStripMenuItem("WSA Files", Image.FromFile("folder.ico"), new EventHandler(wsaFiles));
-                ToolStripMenuItem wsaMenuItem = new ToolStripMenuItem("WSA Settings", Image.FromFile("icon.ico"), new EventHandler(wsaSettings));
-                ToolStripMenuItem androidMenuItem = new ToolStripMenuItem("Android Settings", Image.FromFile("settings.ico"), new EventHandler(androidSettings));
+                ToolStripMenuItem filesMenuItem = new ToolStripMenuItem(rm.GetString("WSAFiles"), Image.FromFile("folder.ico"), new EventHandler(wsaFiles));
+                ToolStripMenuItem wsaMenuItem = new ToolStripMenuItem(rm.GetString("WSASettings"), Image.FromFile("icon.ico"), new EventHandler(wsaSettings));
+                ToolStripMenuItem androidMenuItem = new ToolStripMenuItem(rm.GetString("AndroidSettings"), Image.FromFile("settings.ico"), new EventHandler(androidSettings));
                 ToolStripSeparator separator2 = new ToolStripSeparator();
-                ToolStripMenuItem aboutMenuItem = new ToolStripMenuItem("About", Image.FromFile("info.ico"), new EventHandler(aboutDialog));
-                ToolStripMenuItem exitMenuItem = new ToolStripMenuItem("Exit", Image.FromFile("exit.ico"), new EventHandler(Exit));
+                ToolStripMenuItem aboutMenuItem = new ToolStripMenuItem(rm.GetString("About"), Image.FromFile("info.ico"), new EventHandler(aboutDialog));
+                ToolStripMenuItem exitMenuItem = new ToolStripMenuItem(rm.GetString("Exit"), Image.FromFile("exit.ico"), new EventHandler(Exit));
 
                 notifyIcon = new NotifyIcon();
                 notifyIcon.Icon = icon;
@@ -55,7 +57,7 @@ namespace WSA_System_Control
                 contextMenu.Items.Add(aboutMenuItem);
                 if (installSource == "GitHub")
                 {
-                    ToolStripMenuItem updateMenuItem = new ToolStripMenuItem("Check for updates", Image.FromFile("update.ico"), new EventHandler(checkForUpdates));
+                    ToolStripMenuItem updateMenuItem = new ToolStripMenuItem(rm.GetString("CheckUpdates"), Image.FromFile("update.ico"), new EventHandler(checkForUpdates));
                     contextMenu.Items.Add(updateMenuItem);
                 }
                 contextMenu.Items.Add(exitMenuItem);
@@ -72,11 +74,8 @@ namespace WSA_System_Control
 
         private void Win11WSANotFound()
         {
-            const string message =
-                "You need to install Windows Subsystem for Android before you can use this program." +
-                "\nPlease download Amazon Appstore from the Microsoft Store, which will install the subsystem." +
-                "\nChange your region setting to US if it's not available in your country.";
-            const string caption = "WSA not installed";
+            string message = rm.GetString("WSANotInstalledWin11");
+            string caption = rm.GetString("WSANotInstalled");
             var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.OK,
                                          MessageBoxIcon.Error);
@@ -88,10 +87,8 @@ namespace WSA_System_Control
 
         private void Win10WSANotFound()
         {
-            const string message =
-                "WSA installation not detected." +
-                "\nWindows Subsystem for Android is not officially supported on Windows 10.";
-            const string caption = "WSA not installed";
+            string message = rm.GetString("WSANotInstalledWin10");
+            string caption = rm.GetString("WSANotInstalled");
             var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.OK,
                                          MessageBoxIcon.Error);
@@ -194,7 +191,7 @@ namespace WSA_System_Control
                     contextMenu.Items[0].Enabled = true;
                     contextMenu.Items[1].Enabled = false;
                     notifyIcon.Icon = greyIcon;
-                    notifyIcon.Text = "WSA is off\nClick to turn on\nRight click for more options";
+                    notifyIcon.Text = rm.GetString("WSAOffIcon");
 
                 }
                 else
@@ -202,7 +199,7 @@ namespace WSA_System_Control
                     contextMenu.Items[0].Enabled = false;
                     contextMenu.Items[1].Enabled = true;
                     notifyIcon.Icon = icon;
-                    notifyIcon.Text = "WSA is on\nClick for more options";
+                    notifyIcon.Text = rm.GetString("WSAOnIcon");
                 }
                 Thread.Sleep(1000);
             }

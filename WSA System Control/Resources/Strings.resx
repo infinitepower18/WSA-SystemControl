@@ -153,7 +153,7 @@
   <data name="WSAFiles" xml:space="preserve">
     <value>WSA Files</value>
   </data>
-  <data name="WSANotInstalledTitle" xml:space="preserve">
+  <data name="WSANotInstalled" xml:space="preserve">
     <value>WSA not installed</value>
   </data>
   <data name="WSANotInstalledWin10" xml:space="preserve">
@@ -161,6 +161,15 @@
   </data>
   <data name="WSANotInstalledWin11" xml:space="preserve">
     <value>You need to install Windows Subsystem for Android before you can use this program. Please download Amazon Appstore from the Microsoft Store, which will install the subsystem. Change your region setting to US if it's not available in your country.</value>
+  </data>
+  <data name="WSAOffIcon" xml:space="preserve">
+    <value>WSA is off
+Click to turn on
+Right click for more options</value>
+  </data>
+  <data name="WSAOnIcon" xml:space="preserve">
+    <value>WSA is on
+Click for more options</value>
   </data>
   <data name="WSASettings" xml:space="preserve">
     <value>WSA Settings</value>

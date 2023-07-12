@@ -153,7 +153,7 @@
   <data name="WSAFiles" xml:space="preserve">
     <value>WSA のファイル</value>
   </data>
-  <data name="WSANotInstalledTitle" xml:space="preserve">
+  <data name="WSANotInstalled" xml:space="preserve">
     <value>WSA はインストールされていません</value>
   </data>
   <data name="WSANotInstalledWin10" xml:space="preserve">
