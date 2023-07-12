@@ -21,31 +21,31 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="exit.ico">
+    <None Update="Icons\exit.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="folder.ico">
+    <None Update="Icons\folder.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="icon.ico">
+    <None Update="Icons\icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="icongrey.ico">
+    <None Update="Icons\icongrey.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="info.ico">
+    <None Update="Icons\info.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="poweroff.ico">
+    <None Update="Icons\poweroff.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="poweron.ico">
+    <None Update="Icons\poweron.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="settings.ico">
+    <None Update="Icons\settings.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="update.ico">
+    <None Update="Icons\update.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

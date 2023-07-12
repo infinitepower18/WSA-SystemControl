@@ -18,8 +18,8 @@ namespace WSA_System_Control
             {
                 Directory.SetCurrentDirectory(Windows.ApplicationModel.Package.Current.InstalledLocation.Path + "\\WSA System Control");
             }
-            icon = new Icon("icon.ico");
-            greyIcon = new Icon("icongrey.ico");
+            icon = new Icon("Icons\\icon.ico");
+            greyIcon = new Icon("Icons\\icongrey.ico");
             if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)+"\\Packages\\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe")==false)
             {
                 if (Environment.OSVersion.Version.Build < 22000)
@@ -33,15 +33,15 @@ namespace WSA_System_Control
             }
             else
             {
-                ToolStripMenuItem startMenuItem = new ToolStripMenuItem(rm.GetString("StartWSA"), Image.FromFile("poweron.ico"), new EventHandler(startWSA));
-                ToolStripMenuItem stopMenuItem = new ToolStripMenuItem(rm.GetString("StopWSA"), Image.FromFile("poweroff.ico"), new EventHandler(stopWSA));
+                ToolStripMenuItem startMenuItem = new ToolStripMenuItem(rm.GetString("StartWSA"), Image.FromFile("Icons\\poweron.ico"), new EventHandler(startWSA));
+                ToolStripMenuItem stopMenuItem = new ToolStripMenuItem(rm.GetString("StopWSA"), Image.FromFile("Icons\\poweroff.ico"), new EventHandler(stopWSA));
                 ToolStripSeparator separator1 = new ToolStripSeparator();
-                ToolStripMenuItem filesMenuItem = new ToolStripMenuItem(rm.GetString("WSAFiles"), Image.FromFile("folder.ico"), new EventHandler(wsaFiles));
-                ToolStripMenuItem wsaMenuItem = new ToolStripMenuItem(rm.GetString("WSASettings"), Image.FromFile("icon.ico"), new EventHandler(wsaSettings));
-                ToolStripMenuItem androidMenuItem = new ToolStripMenuItem(rm.GetString("AndroidSettings"), Image.FromFile("settings.ico"), new EventHandler(androidSettings));
+                ToolStripMenuItem filesMenuItem = new ToolStripMenuItem(rm.GetString("WSAFiles"), Image.FromFile("Icons\\folder.ico"), new EventHandler(wsaFiles));
+                ToolStripMenuItem wsaMenuItem = new ToolStripMenuItem(rm.GetString("WSASettings"), Image.FromFile("Icons\\icon.ico"), new EventHandler(wsaSettings));
+                ToolStripMenuItem androidMenuItem = new ToolStripMenuItem(rm.GetString("AndroidSettings"), Image.FromFile("Icons\\settings.ico"), new EventHandler(androidSettings));
                 ToolStripSeparator separator2 = new ToolStripSeparator();
-                ToolStripMenuItem aboutMenuItem = new ToolStripMenuItem(rm.GetString("About"), Image.FromFile("info.ico"), new EventHandler(aboutDialog));
-                ToolStripMenuItem exitMenuItem = new ToolStripMenuItem(rm.GetString("Exit"), Image.FromFile("exit.ico"), new EventHandler(Exit));
+                ToolStripMenuItem aboutMenuItem = new ToolStripMenuItem(rm.GetString("About"), Image.FromFile("Icons\\info.ico"), new EventHandler(aboutDialog));
+                ToolStripMenuItem exitMenuItem = new ToolStripMenuItem(rm.GetString("Exit"), Image.FromFile("Icons\\exit.ico"), new EventHandler(Exit));
 
                 notifyIcon = new NotifyIcon();
                 notifyIcon.Icon = icon;
@@ -57,7 +57,7 @@ namespace WSA_System_Control
                 contextMenu.Items.Add(aboutMenuItem);
                 if (installSource == "GitHub")
                 {
-                    ToolStripMenuItem updateMenuItem = new ToolStripMenuItem(rm.GetString("CheckUpdates"), Image.FromFile("update.ico"), new EventHandler(checkForUpdates));
+                    ToolStripMenuItem updateMenuItem = new ToolStripMenuItem(rm.GetString("CheckUpdates"), Image.FromFile("Icons\\update.ico"), new EventHandler(checkForUpdates));
                     contextMenu.Items.Add(updateMenuItem);
                 }
                 contextMenu.Items.Add(exitMenuItem);
