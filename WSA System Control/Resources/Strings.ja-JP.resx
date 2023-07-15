@@ -164,6 +164,15 @@ WSA の状態を監視し、WSA を 起動／終了できるシンプルなタ�
     <value>このプログラムを使用する前に､ ｢Android 用 Windows サブシステム｣をインストールする必要があります｡ Microsoft Storeから｢Amazonアプリストア｣をインストールしてください｡ WSAがインストールされます｡
 お住まいの国で利用できない場合は､ 地域設定を[米国]に変更してみてください｡</value>
   </data>
+  <data name="WSAOffIcon" xml:space="preserve">
+    <value>WSA は起動していません
+クリックして起動
+右クリックして詳細オプションを表示</value>
+  </data>
+  <data name="WSAOnIcon" xml:space="preserve">
+    <value>WSA は起動しています
+クリックして詳細オプションを表示</value>
+  </data>
   <data name="WSASettings" xml:space="preserve">
     <value>WSA の設定</value>
   </data>
