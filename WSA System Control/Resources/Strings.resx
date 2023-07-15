@@ -122,8 +122,7 @@
   </data>
   <data name="AboutDescription" xml:space="preserve">
     <value>WSA System Control v{0}
-A simple tasktray application that allows you to monitor the WSA status as well as
-start/stop the subsystem.</value>
+A simple tasktray application that allows you to monitor the WSA status as well as start/stop the subsystem.</value>
   </data>
   <data name="AlreadyRunning" xml:space="preserve">
     <value>WSA System Control is already running!</value>

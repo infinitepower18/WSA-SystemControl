@@ -78,6 +78,7 @@ namespace WSA_System_Control
             label1.TabIndex = 3;
             label1.Text = rm.GetString("AboutDescription");
             label1.Text = String.Format(label1.Text,Application.ProductVersion);
+            label1.MaximumSize = new Size(450, 0);
             // 
             // About
             // 
