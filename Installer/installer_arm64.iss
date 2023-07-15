@@ -36,9 +36,12 @@ WizardStyle=modern
 ;MinVersion=10.0.19041
 ArchitecturesAllowed=arm64
 ArchitecturesInstallIn64BitMode=arm64
+LanguageDetectionMethod=uilanguage
+ShowLanguageDialog=no
 
 [Languages]
-Name: "english"; MessagesFile: "compiler:Default.isl"
+Name: "en"; MessagesFile: "compiler:Default.isl"
+Name: "ja"; MessagesFile: "compiler:Languages\Japanese.isl"
 
 [Tasks]
 Name: startup; Description: "Run WSA System Control on Windows login"; GroupDescription: "Additional options:";
@@ -56,4 +59,4 @@ Name: "{commonstartup}\app"; Filename: "{app}\{#MyAppExeName}"; Tasks: startup
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
 [Messages]
-OnlyOnTheseArchitectures=The ARM64 version of WSA System Control is not compatible with your system. Please download the x64 version.
+;OnlyOnTheseArchitectures=The ARM64 version of WSA System Control is not compatible with your system. Please download the x64 version.

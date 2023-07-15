@@ -39,6 +39,8 @@ WizardStyle=modern
 ;MinVersion=10.0.19041
 ArchitecturesAllowed=x64 arm64
 ArchitecturesInstallIn64BitMode=x64 arm64
+LanguageDetectionMethod=uilanguage
+ShowLanguageDialog=no
 
 [Code]
 function InitializeSetup: Boolean;
@@ -49,7 +51,8 @@ begin
 end;
 
 [Languages]
-Name: "english"; MessagesFile: "compiler:Default.isl"
+Name: "en"; MessagesFile: "compiler:Default.isl"
+Name: "ja"; MessagesFile: "compiler:Languages\Japanese.isl"
 
 [Tasks]
 Name: startup; Description: "Run WSA System Control on Windows login"; GroupDescription: "Additional options:";
