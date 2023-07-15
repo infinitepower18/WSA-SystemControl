@@ -158,10 +158,13 @@ A simple tasktray application that allows you to monitor the WSA status as well 
     <value>WSA not installed</value>
   </data>
   <data name="WSANotInstalledWin10" xml:space="preserve">
-    <value>WSA installation not detected. Windows Subsystem for Android is not officially supported on Windows 10.</value>
+    <value>WSA installation not detected.
+Windows Subsystem for Android is not officially supported on Windows 10.</value>
   </data>
   <data name="WSANotInstalledWin11" xml:space="preserve">
-    <value>You need to install Windows Subsystem for Android before you can use this program. Please download Amazon Appstore from the Microsoft Store, which will install the subsystem. Change your region setting to US if it's not available in your country.</value>
+    <value>You need to install Windows Subsystem for Android before you can use this program.
+Please download Amazon Appstore from the Microsoft Store, which will install the subsystem.
+Change your region setting to US if it's not available in your country.</value>
   </data>
   <data name="WSAOffIcon" xml:space="preserve">
     <value>WSA is off
