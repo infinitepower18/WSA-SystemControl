@@ -10,6 +10,8 @@ The icon on the system tray changes depending on the WSA status.
 
 <img width="340" alt="image" src="https://github.com/infinitepower18/WSA-SystemControl/assets/44692189/304fdbd8-ffd7-4127-96d2-23adf672724c">
 
+**Want to see WSA System Control in your language? Check out the [translation guide](https://github.com/infinitepower18/WSA-SystemControl/wiki/Translation-Guide) for further details.**
+
 ## Download
 Operating System|Source
 |---------|---------|
