@@ -26,7 +26,7 @@
     <Resource Language="en"/>
     <Resource Language="ja-JP"/>
     <Resource Language="zh-CN"/>
-    <Resource Language="hu-HU"/>
+    <Resource Language="hu"/>
   </Resources>
 
   <Applications>

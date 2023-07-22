@@ -65,7 +65,7 @@
     <AppxBundlePlatforms>x64|arm64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <GenerateTemporaryStoreCertificate>True</GenerateTemporaryStoreCertificate>
-    <AppxDefaultResourceQualifiers>Language=EN;JA-JP;ZH-CN;HU-HU</AppxDefaultResourceQualifiers>
+    <AppxDefaultResourceQualifiers>Language=EN;JA-JP;ZH-CN;HU</AppxDefaultResourceQualifiers>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
     <DefaultLanguage>en</DefaultLanguage>
