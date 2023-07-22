@@ -43,6 +43,7 @@ ShowLanguageDialog=no
 Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "ja"; MessagesFile: "compiler:Languages\Japanese.isl"
 Name: "zh"; MessagesFile: "compiler:Languages\Chinese.isl"
+Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"
 
 [Tasks]
 Name: startup; Description: "Run WSA System Control on Windows login"; GroupDescription: "Additional options:";
