@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "WSA System Control"
-#define MyAppVersion "1.0.4"
+#define MyAppVersion "1.0.5"
 #define MyAppPublisher "infinitepower18"
 #define MyAppURL "https://github.com/infinitepower18/WSA-SystemControl"
 #define MyAppUpdateURL "https://github.com/infinitepower18/WSA-SystemControl/releases/latest"
