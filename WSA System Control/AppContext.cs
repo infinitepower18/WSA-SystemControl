@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
+using Windows.ApplicationModel;
 
 namespace WSA_System_Control
 {
@@ -11,6 +12,7 @@ namespace WSA_System_Control
         ContextMenuStrip contextMenu;
         Icon icon;
         Icon greyIcon;
+        ToolStripMenuItem startupMenuItem;
         public AppContext()
         {
             if (IsPackaged())
@@ -39,6 +41,7 @@ namespace WSA_System_Control
                 ToolStripMenuItem wsaMenuItem = new ToolStripMenuItem(rm.GetString("WSASettings"), Image.FromFile("Icons\\icon.ico"), new EventHandler(wsaSettings));
                 ToolStripMenuItem androidMenuItem = new ToolStripMenuItem(rm.GetString("AndroidSettings"), Image.FromFile("Icons\\settings.ico"), new EventHandler(androidSettings));
                 ToolStripSeparator separator2 = new ToolStripSeparator();
+                startupMenuItem = new ToolStripMenuItem(rm.GetString("RunStartup"), null, new EventHandler(toggleStartup));
                 ToolStripMenuItem aboutMenuItem = new ToolStripMenuItem(rm.GetString("About"), Image.FromFile("Icons\\info.ico"), new EventHandler(aboutDialog));
                 ToolStripMenuItem exitMenuItem = new ToolStripMenuItem(rm.GetString("Exit"), Image.FromFile("Icons\\exit.ico"), new EventHandler(Exit));
 
@@ -53,6 +56,19 @@ namespace WSA_System_Control
                 contextMenu.Items.Add(wsaMenuItem);
                 contextMenu.Items.Add(androidMenuItem);
                 contextMenu.Items.Add(separator2);
+                if (IsPackaged())
+                {
+                    if (GetStartupState().Result == StartupTaskState.Enabled)
+                    {
+                        startupMenuItem.Checked = true;
+                        contextMenu.Items.Add(startupMenuItem);
+                    }
+                    else if (GetStartupState().Result == StartupTaskState.Disabled)
+                    {
+                        startupMenuItem.Checked = false;
+                        contextMenu.Items.Add(startupMenuItem);
+                    }
+                }
                 contextMenu.Items.Add(aboutMenuItem);
                 if (!IsPackaged())
                 {
@@ -96,6 +112,35 @@ namespace WSA_System_Control
             {
                 Environment.Exit(0);
             }
+        }
+
+        private async Task<StartupTaskState> GetStartupState()
+        {
+            StartupTask startupTask = await StartupTask.GetAsync("WSCStartup");
+            return startupTask.State;
+        }
+
+        private void toggleStartup(object sender, EventArgs e)
+        {
+            Task.Run(async () =>
+            {
+                if (GetStartupState().Result == StartupTaskState.Enabled)
+                {
+                    StartupTask startupTask = await StartupTask.GetAsync("WSCStartup");
+                    startupTask.Disable();
+                    startupMenuItem.Checked = false;
+                }
+                else if (GetStartupState().Result == StartupTaskState.Disabled)
+                {
+                    StartupTask startupTask = await StartupTask.GetAsync("WSCStartup");
+                    StartupTaskState newState = await startupTask.RequestEnableAsync();
+                    if (newState == StartupTaskState.Enabled)
+                    {
+                        startupMenuItem.Checked = true;
+                    }
+                }
+            }
+            );
         }
 
         private void Win10WSANotFound()
@@ -213,6 +258,17 @@ namespace WSA_System_Control
                     contextMenu.Items[1].Enabled = true;
                     notifyIcon.Icon = icon;
                     notifyIcon.Text = rm.GetString("WSAOnIcon");
+                }
+                if (IsPackaged())
+                {
+                    if (GetStartupState().Result == StartupTaskState.Enabled)
+                    {
+                        startupMenuItem.Checked = true;
+                    }
+                    else if (GetStartupState().Result == StartupTaskState.Disabled)
+                    {
+                        startupMenuItem.Checked = false;
+                    }
                 }
                 Thread.Sleep(1000);
             }

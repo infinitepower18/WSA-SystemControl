@@ -145,6 +145,9 @@ A simple tasktray application that allows you to monitor the WSA status as well 
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="RunStartup" xml:space="preserve">
+    <value>Run on startup</value>
+  </data>
   <data name="StartWSA" xml:space="preserve">
     <value>Start WSA</value>
   </data>
