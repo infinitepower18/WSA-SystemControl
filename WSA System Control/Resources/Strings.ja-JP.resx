@@ -145,6 +145,9 @@ WSA の状態を監視し、WSA を 起動／終了できるシンプルなタ�
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="RunStartup" xml:space="preserve">
+    <value>起動時に実行</value>
+  </data>
   <data name="StartWSA" xml:space="preserve">
     <value>WSA を起動</value>
   </data>

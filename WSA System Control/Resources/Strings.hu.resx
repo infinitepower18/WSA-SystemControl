@@ -145,6 +145,9 @@ Egy Tálca-alkalmazás, amely lehetővé teszi a WSA állapotának figyelését,
   <data name="OK" xml:space="preserve">
     <value>Oké</value>
   </data>
+  <data name="RunStartup" xml:space="preserve">
+    <value>Futtatni indításkor</value>
+  </data>
   <data name="StartWSA" xml:space="preserve">
     <value>Start WSA</value>
   </data>

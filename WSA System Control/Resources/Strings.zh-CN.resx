@@ -178,4 +178,7 @@ Windows 10不正式支持Android子系统。</value>
     <value>WSA已启动
 点击获取更多选项</value>
   </data>
+  <data name="RunStartup" xml:space="preserve">
+    <value>启动时运行</value>
+  </data>
 </root>
