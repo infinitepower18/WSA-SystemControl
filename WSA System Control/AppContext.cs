@@ -216,8 +216,11 @@ namespace WSA_System_Control
             {
                 MethodInfo mi = typeof(NotifyIcon).GetMethod("ShowContextMenu", BindingFlags.Instance | BindingFlags.NonPublic);
                 mi.Invoke(notifyIcon, null);
-                Thread t = new Thread(new ThreadStart(startState));
-                t.Start();
+                if (IsPackaged())
+                {
+                    Thread t = new Thread(new ThreadStart(startMenuState));
+                    t.Start();
+                }
             } else if(mouseEventArgs.Button == MouseButtons.Left & contextMenu.Items[0].Enabled == true)
             {
                 System.Diagnostics.Process.Start(new ProcessStartInfo
@@ -228,12 +231,12 @@ namespace WSA_System_Control
             }
             else if (mouseEventArgs.Button == MouseButtons.Right && IsPackaged())
             {
-                Thread t = new Thread(new ThreadStart(startState));
+                Thread t = new Thread(new ThreadStart(startMenuState));
                 t.Start();
             }
         }
 
-        private async void startState()
+        private async void startMenuState()
         {
             if (IsPackaged())
             {
