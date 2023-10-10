@@ -216,6 +216,8 @@ namespace WSA_System_Control
             {
                 MethodInfo mi = typeof(NotifyIcon).GetMethod("ShowContextMenu", BindingFlags.Instance | BindingFlags.NonPublic);
                 mi.Invoke(notifyIcon, null);
+                Thread t = new Thread(new ThreadStart(startState));
+                t.Start();
             } else if(mouseEventArgs.Button == MouseButtons.Left & contextMenu.Items[0].Enabled == true)
             {
                 System.Diagnostics.Process.Start(new ProcessStartInfo
@@ -223,6 +225,54 @@ namespace WSA_System_Control
                     FileName = "wsa://system",
                     UseShellExecute = true
                 });
+            }
+            else if (mouseEventArgs.Button == MouseButtons.Right && IsPackaged())
+            {
+                Thread t = new Thread(new ThreadStart(startState));
+                t.Start();
+            }
+        }
+
+        private async void startState()
+        {
+            if (IsPackaged())
+            {
+                if (GetStartupState().Result == StartupTaskState.Enabled)
+                {
+                    contextMenu.Invoke(() =>
+                    {
+                        startupMenuItem.Checked = true;
+                    });
+                    contextMenu.Items[7].Enabled = true;
+
+                }
+                else if (GetStartupState().Result == StartupTaskState.Disabled)
+                {
+                    contextMenu.Invoke(() =>
+                    {
+                        startupMenuItem.Checked = false;
+                    });
+                    contextMenu.Items[7].Enabled = true;
+
+                }
+                else
+                {
+                    contextMenu.Items[7].Enabled = false;
+                    if (GetStartupState().Result == StartupTaskState.EnabledByPolicy)
+                    {
+                        contextMenu.Invoke(() =>
+                        {
+                            startupMenuItem.Checked = true;
+                        });
+                    }
+                    else
+                    {
+                        contextMenu.Invoke(() =>
+                        {
+                            startupMenuItem.Checked = false;
+                        });
+                    }
+                }
             }
         }
         
@@ -245,43 +295,6 @@ namespace WSA_System_Control
                     contextMenu.Items[1].Enabled = true;
                     notifyIcon.Icon = icon;
                     notifyIcon.Text = rm.GetString("WSAOnIcon");
-                }
-                if (IsPackaged() && contextMenu.InvokeRequired)
-                {
-                    if (GetStartupState().Result == StartupTaskState.Enabled)
-                    {
-                            contextMenu.Invoke(() =>
-                            {
-                                startupMenuItem.Checked = true;
-                            });
-                            contextMenu.Items[7].Enabled = true;
-                        
-                    }
-                    else if (GetStartupState().Result == StartupTaskState.Disabled)
-                    {
-                            contextMenu.Invoke(() =>
-                            {
-                                startupMenuItem.Checked = false;
-                            });
-                            contextMenu.Items[7].Enabled = true;
-                        
-                    } else
-                    {
-                        contextMenu.Items[7].Enabled = false;
-                        if (GetStartupState().Result == StartupTaskState.EnabledByPolicy)
-                        {
-                                contextMenu.Invoke(() =>
-                                {
-                                    startupMenuItem.Checked = true;
-                                });
-                        } else
-                        {
-                                contextMenu.Invoke(() =>
-                                {
-                                    startupMenuItem.Checked = false;
-                                });
-                        }
-                    }
                 }
                 Thread.Sleep(1000);
             }
