@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSA System Control", "WSA System Control\WSA System Control.csproj", "{82D87220-F573-4EEF-91C1-730E6A8F37B1}"
 EndProject
-Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "WSCMSIX", "WSCMSIX\WSCMSIX.wapproj", "{FA56A58A-2692-4BE5-865A-4B91F5BE5398}"
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "WSCPackage", "WSCPackage\WSCPackage.wapproj", "{FA56A58A-2692-4BE5-865A-4B91F5BE5398}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
