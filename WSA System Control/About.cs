@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Microsoft.Win32;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace WSA_System_Control
 {
@@ -19,6 +11,12 @@ namespace WSA_System_Control
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Icon = new Icon("app.ico");
+            int res = (int)Registry.GetValue("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", "AppsUseLightTheme", -1);
+            if (res == 0)
+            {
+                this.BackColor = ColorTranslator.FromHtml("#FF2D2D30");
+                this.ForeColor = Color.White;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

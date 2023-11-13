@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using Dark.Net;
+using Microsoft.Win32;
 using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
@@ -54,7 +55,7 @@ namespace WSA_System_Control
                 int res = (int)Registry.GetValue("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", "AppsUseLightTheme", -1);
                 if (res == 0)
                 {
-                    contextMenu.BackColor = Color.Black;
+                    contextMenu.BackColor = ColorTranslator.FromHtml("#FF2D2D30");
                     contextMenu.ForeColor = Color.White;
                 }
 
@@ -157,6 +158,7 @@ namespace WSA_System_Control
         private void aboutDialog(object sender, EventArgs e)
         {
             About about = new About();
+            DarkNet.Instance.SetWindowThemeForms(about, Theme.Auto);
             about.ShowDialog();
         }
 

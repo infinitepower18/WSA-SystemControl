@@ -21,6 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DarkNet" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Icons\exit.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

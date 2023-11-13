@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using Microsoft.Win32;
+using System.Reflection;
 using System.Resources;
 
 namespace WSA_System_Control
@@ -46,6 +47,9 @@ namespace WSA_System_Control
             button1.TabIndex = 0;
             button1.Text = rm.GetString("OK");
             button1.UseVisualStyleBackColor = true;
+            if (isDarkMode()) {
+                button1.BackColor = ColorTranslator.FromHtml("#FF2D2D30");
+            }
             button1.Click += button1_Click;
             // 
             // button2
@@ -56,6 +60,10 @@ namespace WSA_System_Control
             button2.TabIndex = 1;
             button2.Text = rm.GetString("GitHub");
             button2.UseVisualStyleBackColor = true;
+            if (isDarkMode())
+            {
+                button2.BackColor = ColorTranslator.FromHtml("#FF2D2D30");
+            }
             button2.Click += button2_Click;
             // 
             // linkLabel1
@@ -67,6 +75,10 @@ namespace WSA_System_Control
             linkLabel1.TabIndex = 2;
             linkLabel1.TabStop = true;
             linkLabel1.Text = rm.GetString("Donate");
+            if (isDarkMode())
+            {
+                linkLabel1.LinkColor = Color.White;
+            }
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label1
@@ -93,6 +105,16 @@ namespace WSA_System_Control
             Text = rm.GetString("About");
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private bool isDarkMode()
+        {
+            int res = (int)Registry.GetValue("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", "AppsUseLightTheme", -1);
+            if (res == 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         #endregion
