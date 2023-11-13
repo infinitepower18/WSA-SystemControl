@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Microsoft.Win32;
+using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
 using Windows.ApplicationModel;
@@ -49,6 +50,16 @@ namespace WSA_System_Control
                 notifyIcon.Icon = icon;
 
                 contextMenu = new ContextMenuStrip();
+
+                int res = (int)Registry.GetValue("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", "AppsUseLightTheme", -1);
+                if (res == 0)
+                {
+                    contextMenu.BackColor = Color.Black;
+                    contextMenu.ForeColor = Color.White;
+                }
+
+                contextMenu.RenderMode = ToolStripRenderMode.System;
+
                 contextMenu.Items.Add(startMenuItem);
                 contextMenu.Items.Add(stopMenuItem);
                 contextMenu.Items.Add(separator1);
