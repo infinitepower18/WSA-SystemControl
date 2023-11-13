@@ -52,12 +52,7 @@ namespace WSA_System_Control
 
                 contextMenu = new ContextMenuStrip();
 
-                int res = (int)Registry.GetValue("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", "AppsUseLightTheme", -1);
-                if (res == 0)
-                {
-                    contextMenu.BackColor = ColorTranslator.FromHtml("#FF2D2D30");
-                    contextMenu.ForeColor = Color.White;
-                }
+                setTheme();
 
                 contextMenu.RenderMode = ToolStripRenderMode.System;
 
@@ -102,6 +97,20 @@ namespace WSA_System_Control
             catch
             {
                 return false;
+            }
+        }
+
+        private void setTheme()
+        {
+            int res = (int)Registry.GetValue("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", "AppsUseLightTheme", -1);
+            if (res == 0)
+            {
+                contextMenu.BackColor = ColorTranslator.FromHtml("#FF2D2D30");
+                contextMenu.ForeColor = Color.White;
+            } else
+            {
+                contextMenu.BackColor = Color.White;
+                contextMenu.ForeColor = Color.Black;
             }
         }
 
@@ -225,6 +234,7 @@ namespace WSA_System_Control
         private void mouseClick(object sender, EventArgs e)
         {
             MouseEventArgs mouseEventArgs = (MouseEventArgs)e;
+            setTheme();
             if (mouseEventArgs.Button == MouseButtons.Left & contextMenu.Items[0].Enabled == false)
             {
                 MethodInfo mi = typeof(NotifyIcon).GetMethod("ShowContextMenu", BindingFlags.Instance | BindingFlags.NonPublic);
