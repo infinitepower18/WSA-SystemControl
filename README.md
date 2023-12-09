@@ -4,7 +4,7 @@
 [![.NET Build](https://github.com/infinitepower18/WSA-SystemControl/actions/workflows/dotnet.yml/badge.svg)](https://github.com/infinitepower18/WSA-SystemControl/actions/workflows/dotnet.yml)
 ![GitHub](https://img.shields.io/github/license/infinitepower18/wsa-systemcontrol)
 # WSA System Control
-A simple tasktray application that allows you to monitor the WSA status as well as start/stop the subsystem. You can also launch the WSA Settings app, the Android Settings app and the Files app right from the menu.
+A simple system tray application that allows you to monitor the WSA status as well as start/stop the subsystem. You can also launch the WSA Settings app, the Android Settings app and the Files app right from the menu.
 
 The icon on the system tray changes depending on the WSA status.
 
