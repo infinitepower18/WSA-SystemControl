@@ -24,8 +24,8 @@ ChangesAssociations=no
 DisableProgramGroupPage=yes
 LicenseFile=C:\Users\Ahnaf\source\repos\WSA-SystemControl\LICENSE.txt
 ; Remove the following line to run in administrative install mode (install for all users.)
-;PrivilegesRequired=lowest
-;PrivilegesRequiredOverridesAllowed=dialog
+PrivilegesRequired=lowest
+PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=C:\Users\Ahnaf\Desktop\Installer
 OutputBaseFilename=WSASystemControl_{#MyAppVersion}_arm64
 SetupIconFile=C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\app.ico
