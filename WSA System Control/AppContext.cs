@@ -129,15 +129,14 @@ namespace WSA_System_Control
                                          MessageBoxIcon.Error,
                                          MessageBoxDefaultButton.Button1,
                                          MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
-                Environment.Exit(0);
             }
             else
             {
                 MessageBox.Show(message, caption,
                                          MessageBoxButtons.OK,
                                          MessageBoxIcon.Error);
-                Environment.Exit(0);
             }
+            Environment.Exit(0);
         }
 
         private async Task<StartupTaskState> GetStartupState()
@@ -175,14 +174,13 @@ namespace WSA_System_Control
                                          MessageBoxIcon.Error,
                                          MessageBoxDefaultButton.Button1,
                                          MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
-                Environment.Exit(0);
             } else
             {
                 MessageBox.Show(message, caption,
                                          MessageBoxButtons.OK,
                                          MessageBoxIcon.Error);
-                Environment.Exit(0);
             }
+            Environment.Exit(0);
         }
 
         private void aboutDialog(object sender, EventArgs e)
