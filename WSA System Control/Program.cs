@@ -22,8 +22,8 @@ namespace WSA_System_Control
             {
                 if (CultureInfo.CurrentUICulture.Name.StartsWith("ar"))
                 {
-                    MessageBox.Show("WSA System Control",
-                        rm.GetString("AlreadyRunning"),
+                    MessageBox.Show(rm.GetString("AlreadyRunning"),
+                        "WSA System Control",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information,
                         MessageBoxDefaultButton.Button1,
@@ -31,8 +31,8 @@ namespace WSA_System_Control
                 }
                 else
                 {
-                    MessageBox.Show("WSA System Control",
-                        rm.GetString("AlreadyRunning"),
+                    MessageBox.Show(rm.GetString("AlreadyRunning"),
+                        "WSA System Control",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information,
                         MessageBoxDefaultButton.Button1);
