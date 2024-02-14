@@ -64,7 +64,7 @@ hu.runOnStartup=Futtatni indításkor
 ar.runOnStartup=التشغيل مع بدء التشغيل
 
 [Tasks]
-Name: startup; Description: "Run WSA System Control on Windows login";
+Name: startup; Description: "{cm:runOnStartup}";
 
 [Files]
 Source: "C:\Program Files (x86)\Inno Setup 6\netcorecheck_x64.exe"; Flags: dontcopy noencryption
