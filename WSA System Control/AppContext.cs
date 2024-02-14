@@ -124,25 +124,19 @@ namespace WSA_System_Control
             string caption = rm.GetString("WSANotInstalled");
             if (CultureInfo.CurrentUICulture.Name.StartsWith("ar"))
             {
-                var result = MessageBox.Show(message, caption,
+                MessageBox.Show(message, caption,
                                          MessageBoxButtons.OK,
                                          MessageBoxIcon.Error,
                                          MessageBoxDefaultButton.Button1,
                                          MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
-                if (result == DialogResult.OK)
-                {
-                    Environment.Exit(0);
-                }
+                Environment.Exit(0);
             }
             else
             {
-                var result = MessageBox.Show(message, caption,
+                MessageBox.Show(message, caption,
                                          MessageBoxButtons.OK,
                                          MessageBoxIcon.Error);
-                if (result == DialogResult.OK)
-                {
-                    Environment.Exit(0);
-                }
+                Environment.Exit(0);
             }
         }
 
@@ -176,24 +170,18 @@ namespace WSA_System_Control
             string caption = rm.GetString("WSANotInstalled");
             if (CultureInfo.CurrentUICulture.Name.StartsWith("ar"))
             {
-                var result = MessageBox.Show(message, caption,
+                MessageBox.Show(message, caption,
                                          MessageBoxButtons.OK,
                                          MessageBoxIcon.Error,
                                          MessageBoxDefaultButton.Button1,
                                          MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
-                if (result == DialogResult.OK)
-                {
-                    Environment.Exit(0);
-                }
+                Environment.Exit(0);
             } else
             {
-                var result = MessageBox.Show(message, caption,
+                MessageBox.Show(message, caption,
                                          MessageBoxButtons.OK,
                                          MessageBoxIcon.Error);
-                if (result == DialogResult.OK)
-                {
-                    Environment.Exit(0);
-                }
+                Environment.Exit(0);
             }
         }
 
