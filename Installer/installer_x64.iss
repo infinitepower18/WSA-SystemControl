@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "WSA System Control"
-#define MyAppVersion "1.0.8"
+#define MyAppVersion "1.0.9"
 #define MyAppPublisher "infinitepower18"
 #define MyAppURL "https://github.com/infinitepower18/WSA-SystemControl"
 #define MyAppUpdateURL "https://github.com/infinitepower18/WSA-SystemControl/releases/latest"
@@ -44,6 +44,7 @@ Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "ja"; MessagesFile: "compiler:Languages\Japanese.isl"
 Name: "zh"; MessagesFile: "compiler:Languages\Chinese.isl"
 Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"
+Name: "ar"; MessagesFile: "compiler:Languages\Arabic.isl"
 
 [Tasks]
 Name: startup; Description: "Run WSA System Control on Windows login"; GroupDescription: "Additional options:";

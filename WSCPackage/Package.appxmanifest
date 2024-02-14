@@ -10,7 +10,7 @@
   <Identity
     Name="46954GamenologyMedia.WSASystemControl"
     Publisher="CN=091B3CC8-312A-4A38-8EAB-908DCCB09857"
-    Version="1.0.8.0" />
+    Version="1.0.9.0" />
 
   <Properties>
     <DisplayName>WSA System Control</DisplayName>
@@ -27,6 +27,7 @@
     <Resource Language="ja-JP"/>
     <Resource Language="zh-CN"/>
     <Resource Language="hu"/>
+    <Resource Language="ar"/>
   </Resources>
 
   <Applications>
