@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace WSA_System_Control
 {
@@ -8,6 +9,11 @@ namespace WSA_System_Control
         public About()
         {
             InitializeComponent();
+            if (CultureInfo.CurrentUICulture.Name.StartsWith("ar"))
+            {
+                this.RightToLeft = RightToLeft.Yes;
+                this.RightToLeftLayout = true;
+            }
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Icon = new Icon("app.ico");

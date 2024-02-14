@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Globalization;
 using System.Reflection;
 using System.Resources;
 
@@ -17,10 +18,25 @@ namespace WSA_System_Control
             ApplicationConfiguration.Initialize();
 
             ResourceManager rm = new ResourceManager("WSA_System_Control.Resources.Strings", Assembly.GetExecutingAssembly());
-
             if (Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length > 1)
             {
-                MessageBox.Show(rm.GetString("AlreadyRunning"));
+                if (CultureInfo.CurrentUICulture.Name.StartsWith("ar"))
+                {
+                    MessageBox.Show("WSA System Control",
+                        rm.GetString("AlreadyRunning"),
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information,
+                        MessageBoxDefaultButton.Button1,
+                        MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                }
+                else
+                {
+                    MessageBox.Show("WSA System Control",
+                        rm.GetString("AlreadyRunning"),
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information,
+                        MessageBoxDefaultButton.Button1);
+                }
                 Application.Exit();
             }
             else

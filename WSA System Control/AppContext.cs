@@ -1,6 +1,7 @@
 ﻿using Dark.Net;
 using Microsoft.Win32;
 using System.Diagnostics;
+using System.Globalization;
 using System.Reflection;
 using System.Resources;
 using Windows.ApplicationModel;
@@ -75,7 +76,10 @@ namespace WSA_System_Control
                     contextMenu.Items.Add(updateMenuItem);
                 }
                 contextMenu.Items.Add(exitMenuItem);
-
+                if (CultureInfo.CurrentUICulture.Name.StartsWith("ar"))
+                {
+                    contextMenu.RightToLeft = RightToLeft.Yes;
+                }
                 notifyIcon.ContextMenuStrip = contextMenu;
                 notifyIcon.Visible = true;
 
@@ -118,12 +122,27 @@ namespace WSA_System_Control
         {
             string message = rm.GetString("WSANotInstalledWin11");
             string caption = rm.GetString("WSANotInstalled");
-            var result = MessageBox.Show(message, caption,
+            if (CultureInfo.CurrentUICulture.Name.StartsWith("ar"))
+            {
+                var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.OK,
+                                         MessageBoxIcon.Error,
+                                         MessageBoxDefaultButton.Button1,
+                                         MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                if (result == DialogResult.OK)
+                {
+                    Environment.Exit(0);
+                }
+            }
+            else
+            {
+                var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.OK,
                                          MessageBoxIcon.Error);
-            if (result == DialogResult.OK)
-            {
-                Environment.Exit(0);
+                if (result == DialogResult.OK)
+                {
+                    Environment.Exit(0);
+                }
             }
         }
 
@@ -155,12 +174,26 @@ namespace WSA_System_Control
         {
             string message = rm.GetString("WSANotInstalledWin10");
             string caption = rm.GetString("WSANotInstalled");
-            var result = MessageBox.Show(message, caption,
+            if (CultureInfo.CurrentUICulture.Name.StartsWith("ar"))
+            {
+                var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.OK,
+                                         MessageBoxIcon.Error,
+                                         MessageBoxDefaultButton.Button1,
+                                         MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                if (result == DialogResult.OK)
+                {
+                    Environment.Exit(0);
+                }
+            } else
+            {
+                var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.OK,
                                          MessageBoxIcon.Error);
-            if (result == DialogResult.OK)
-            {
-                Environment.Exit(0);
+                if (result == DialogResult.OK)
+                {
+                    Environment.Exit(0);
+                }
             }
         }
 
