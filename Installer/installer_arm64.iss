@@ -39,15 +39,15 @@ ArchitecturesInstallIn64BitMode=arm64
 LanguageDetectionMethod=uilanguage
 ShowLanguageDialog=no
 
-[Languages]
-Name: "en"; MessagesFile: "compiler:Default.isl"
-Name: "ja"; MessagesFile: "compiler:Languages\Japanese.isl"
-Name: "zh"; MessagesFile: "compiler:Languages\Chinese.isl"
-Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"
-Name: "ar"; MessagesFile: "compiler:Languages\Arabic.isl"
+[CustomMessages]
+en.runOnStartup=Run on startup
+ja.runOnStartup=スタートアップとして実行
+zh.runOnStartup=启动时运行
+hu.runOnStartup=Futtatni indításkor
+ar.runOnStartup=التشغيل مع بدء التشغيل
 
 [Tasks]
-Name: startup; Description: "Run WSA System Control on Windows login"; GroupDescription: "Additional options:";
+Name: startup; Description: "Run WSA System Control on Windows login";
 
 [Files]
 Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net8.0-windows10.0.22000.0\publish\win-arm64\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion

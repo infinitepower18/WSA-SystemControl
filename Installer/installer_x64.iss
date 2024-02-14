@@ -56,8 +56,15 @@ Name: "zh"; MessagesFile: "compiler:Languages\Chinese.isl"
 Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"
 Name: "ar"; MessagesFile: "compiler:Languages\Arabic.isl"
 
+[CustomMessages]
+en.runOnStartup=Run on startup
+ja.runOnStartup=スタートアップとして実行
+zh.runOnStartup=启动时运行
+hu.runOnStartup=Futtatni indításkor
+ar.runOnStartup=التشغيل مع بدء التشغيل
+
 [Tasks]
-Name: startup; Description: "Run WSA System Control on Windows login"; GroupDescription: "Additional options:";
+Name: startup; Description: "Run WSA System Control on Windows login";
 
 [Files]
 Source: "C:\Program Files (x86)\Inno Setup 6\netcorecheck_x64.exe"; Flags: dontcopy noencryption
