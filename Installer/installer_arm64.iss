@@ -54,7 +54,7 @@ hu.runOnStartup=Futtatni indításkor
 ar.runOnStartup=التشغيل مع بدء التشغيل
 
 [Tasks]
-Name: startup; Description: "Run WSA System Control on Windows login";
+Name: startup; Description: "{cm:runOnStartup}";
 
 [Files]
 Source: "C:\Users\Ahnaf\source\repos\WSA-SystemControl\WSA System Control\bin\Release\net8.0-windows10.0.22000.0\publish\win-arm64\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
