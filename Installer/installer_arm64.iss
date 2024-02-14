@@ -39,6 +39,13 @@ ArchitecturesInstallIn64BitMode=arm64
 LanguageDetectionMethod=uilanguage
 ShowLanguageDialog=no
 
+[Languages]
+Name: "en"; MessagesFile: "compiler:Default.isl"
+Name: "ja"; MessagesFile: "compiler:Languages\Japanese.isl"
+Name: "zh"; MessagesFile: "compiler:Languages\Chinese.isl"
+Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"
+Name: "ar"; MessagesFile: "compiler:Languages\Arabic.isl"
+
 [CustomMessages]
 en.runOnStartup=Run on startup
 ja.runOnStartup=スタートアップとして実行
