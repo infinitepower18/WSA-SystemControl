@@ -125,7 +125,7 @@
 Egy Tálca-alkalmazás, amely lehetővé teszi a WSA állapotának figyelését, valamint az alrendszer indítását/leállítását.</value>
   </data>
   <data name="AlreadyRunning" xml:space="preserve">
-    <value>WSA System Control már fut!</value>
+    <value>A WSA System Control már fut!</value>
   </data>
   <data name="AndroidSettings" xml:space="preserve">
     <value>Android Beállítások</value>
@@ -146,7 +146,7 @@ Egy Tálca-alkalmazás, amely lehetővé teszi a WSA állapotának figyelését,
     <value>Oké</value>
   </data>
   <data name="RunStartup" xml:space="preserve">
-    <value>Futtatni indításkor</value>
+    <value>Futtatás indításkor</value>
   </data>
   <data name="StartWSA" xml:space="preserve">
     <value>Start WSA</value>
@@ -166,12 +166,12 @@ A Windows Subsystem for Android hivatalosan nem támogatott a Windows 10 rendsze
   </data>
   <data name="WSANotInstalledWin11" xml:space="preserve">
     <value>A program használatához telepítenie kell a Windows Subsystem for Android rendszert.
-Kérjük, töltse le az Amazon Appstore alkalmazást a Microsoft Store-ból, amely telepíti az alrendszert.
+Kérjük töltse le az Amazon Appstore alkalmazást a Microsoft Store-ból, amely telepíti az alrendszert.
 Módosítsa a régióbeállítást USA-ra, ha ez nem érhető el az Ön országában.</value>
   </data>
   <data name="WSAOffIcon" xml:space="preserve">
     <value>A WSA ki van kapcsolva
-Kattintson a bekapcsoláshoz
+Kattintson a bekapcsolásához
 További lehetőségekért kattintson a jobb gombbal</value>
   </data>
   <data name="WSAOnIcon" xml:space="preserve">
