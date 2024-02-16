@@ -12,8 +12,6 @@ The icon on the system tray changes depending on the WSA status.
 
 **Stay updated on the latest WSA System Control updates via the [WhatsApp](https://whatsapp.com/channel/0029Va813rH1iUxXWN4sfl1Z) and [Telegram](https://t.me/WSASystemControl) channels.**
 
-**Want to see WSA System Control in your language? Check out the [translation guide](https://github.com/infinitepower18/WSA-SystemControl/wiki/Translation-Guide) for further details.**
-
 ## Download
 Operating System|Source
 |---------|---------|
