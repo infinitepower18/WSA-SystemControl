@@ -50,7 +50,7 @@ Name: "ar"; MessagesFile: "compiler:Languages\Arabic.isl"
 en.runOnStartup=Run on startup
 ja.runOnStartup=スタートアップとして実行
 zh.runOnStartup=启动时运行
-hu.runOnStartup=Futtatni indításkor
+hu.runOnStartup=Futtatás indításkor
 ar.runOnStartup=التشغيل مع بدء التشغيل
 
 [Tasks]
