@@ -165,9 +165,8 @@
 نظام Windows الفرعي لنظام Android غير مدعوم رسميًا على نظام التشغيل Windows 10.</value>
   </data>
   <data name="WSANotInstalledWin11" xml:space="preserve">
-    <value>لاستخدام هذا البرنامج، يجب أن تقوم بتثبيت Windows Subsystem for Android.
-برجاء تنزيل Amazon Appstore من متجر Microsoft، الذي سيقوم بتثبيت النظام الفرعي لنظام اندرويد.
-قم بتغيير إعدادات المنطقة إلى الولايات المتحدة إذا لم يكن متاحًا في بلدك.</value>
+    <value>لم يتم التعرف على WSA.
+لاستخدام هذا البرنامج، تأكد من تثبيت نظام Windows الفرعي لنظام Android على جهاز الكمبيوتر الخاص بك.</value>
   </data>
   <data name="WSAOffIcon" xml:space="preserve">
     <value>نظام أندرويد متوقف

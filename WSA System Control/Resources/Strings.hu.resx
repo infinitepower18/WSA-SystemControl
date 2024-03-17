@@ -165,9 +165,8 @@ Egy Tálca-alkalmazás, amely lehetővé teszi a WSA állapotának figyelését,
 A Windows Subsystem for Android hivatalosan nem támogatott a Windows 10 rendszeren.</value>
   </data>
   <data name="WSANotInstalledWin11" xml:space="preserve">
-    <value>A program használatához telepítenie kell a Windows Subsystem for Android rendszert.
-Kérjük töltse le az Amazon Appstore alkalmazást a Microsoft Store-ból, amely telepíti az alrendszert.
-Módosítsa a régióbeállítást USA-ra, ha ez nem érhető el az Ön országában.</value>
+    <value>WSA telepítés nem észlelhető.
+A program használatához győződjön meg arról, hogy a Windows Subsystem for Android telepítve van a számítógépén.</value>
   </data>
   <data name="WSAOffIcon" xml:space="preserve">
     <value>A WSA ki van kapcsolva

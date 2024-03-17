@@ -155,9 +155,8 @@ Windows 10不正式支持Android子系统。</value>
 右键获取更多选项</value>
   </data>
   <data name="WSANotInstalledWin11" xml:space="preserve">
-    <value>在使用此程序之前，您需要安装Android子系统。
-请从Microsoft Store下载Amazon Appstore，该应用程序将安装子系统。
-如果您的国家/地区没有此应用程序，请将区域设置更改为美国。</value>
+    <value>未检测到WSA安装程序。
+要使用此程序，请确保您的电脑上安装了适用于 Android 的 Windows 子系统。</value>
   </data>
   <data name="WSAFiles" xml:space="preserve">
     <value>WSA 文件</value>
