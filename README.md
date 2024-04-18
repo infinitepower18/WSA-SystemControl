@@ -1,5 +1,4 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/infinitepower18/wsa-systemcontrol)
-![MS Store downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ahnafmahmud.com%2Fwsasyscontrol%2Finstalls)
 ![GitHub all releases](https://img.shields.io/github/downloads/infinitepower18/WSA-SystemControl/total?label=github%20downloads)
 [![.NET Build](https://github.com/infinitepower18/WSA-SystemControl/actions/workflows/dotnet.yml/badge.svg)](https://github.com/infinitepower18/WSA-SystemControl/actions/workflows/dotnet.yml)
 ![GitHub](https://img.shields.io/github/license/infinitepower18/wsa-systemcontrol)
