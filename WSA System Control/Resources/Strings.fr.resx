@@ -125,7 +125,7 @@
 Une simple application qui permet de surveiller l'état de WSA, ainsi que de le démarrer ou l'arrêter, depuis la barre des tâches.</value>
   </data>
   <data name="AlreadyRunning" xml:space="preserve">
-    <value>WSA System Control est déjà lancé !</value>
+    <value>WSA System Control est déjà lancé!</value>
   </data>
   <data name="AndroidSettings" xml:space="preserve">
     <value>Paramètres Android</value>
