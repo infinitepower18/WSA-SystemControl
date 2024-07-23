@@ -45,12 +45,14 @@ Name: "ja"; MessagesFile: "compiler:Languages\Japanese.isl"
 Name: "zh"; MessagesFile: "compiler:Languages\Chinese.isl"
 Name: "hu"; MessagesFile: "compiler:Languages\Hungarian.isl"
 Name: "ar"; MessagesFile: "compiler:Languages\Arabic.isl"
+Name: "fr"; MessagesFile: "compiler:Languages\French.isl"
 
 [CustomMessages]
 en.runOnStartup=Run on startup
 ja.runOnStartup=スタートアップとして実行
 zh.runOnStartup=启动时运行
 hu.runOnStartup=Futtatás indításkor
+fr.runOnStartup=Exécuter au démarrage
 ar.runOnStartup=التشغيل مع بدء التشغيل
 
 [Tasks]
