@@ -34,8 +34,8 @@ Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
 ;MinVersion=10.0.19041
-ArchitecturesAllowed=x64 arm64
-ArchitecturesInstallIn64BitMode=x64 arm64
+ArchitecturesAllowed=x64compatible
+ArchitecturesInstallIn64BitMode=x64compatible
 LanguageDetectionMethod=uilanguage
 ShowLanguageDialog=no
 
