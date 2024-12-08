@@ -162,7 +162,7 @@ A simple system tray application that allows you to monitor the WSA status as we
   </data>
   <data name="WSANotInstalledWin10" xml:space="preserve">
     <value>WSA installation not detected.
-Windows Subsystem for Android is not officially supported on Windows 10.</value>
+To use this program, make sure you have Windows Subsystem for Android installed on your PC.</value>
   </data>
   <data name="WSANotInstalledWin11" xml:space="preserve">
     <value>WSA installation not detected.

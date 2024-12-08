@@ -162,7 +162,7 @@
   </data>
   <data name="WSANotInstalledWin10" xml:space="preserve">
     <value>لم يتم التعرف على WSA.
-نظام Windows الفرعي لنظام Android غير مدعوم رسميًا على نظام التشغيل Windows 10.</value>
+لاستخدام هذا البرنامج، تأكد من تثبيت نظام Windows الفرعي لنظام Android على جهاز الكمبيوتر الخاص بك.</value>
   </data>
   <data name="WSANotInstalledWin11" xml:space="preserve">
     <value>لم يتم التعرف على WSA.

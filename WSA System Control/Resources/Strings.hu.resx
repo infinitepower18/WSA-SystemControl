@@ -162,7 +162,7 @@ Egy Tálca-alkalmazás, amely lehetővé teszi a WSA állapotának figyelését,
   </data>
   <data name="WSANotInstalledWin10" xml:space="preserve">
     <value>WSA telepítés nem észlelhető.
-A Windows Subsystem for Android hivatalosan nem támogatott a Windows 10 rendszeren.</value>
+A program használatához győződjön meg arról, hogy a Windows Subsystem for Android telepítve van a számítógépén.</value>
   </data>
   <data name="WSANotInstalledWin11" xml:space="preserve">
     <value>WSA telepítés nem észlelhető.

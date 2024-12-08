@@ -161,7 +161,7 @@ WSA の状態を監視し、WSA を 起動／終了できるシンプルなタ�
     <value>WSA はインストールされていません</value>
   </data>
   <data name="WSANotInstalledWin10" xml:space="preserve">
-    <value>WSA のインストールが検出されません｡ ｢Android 用 Windows サブシステム｣では､ Windows 10 を正式にサポートしていません｡</value>
+    <value>WSA のインストールが検出されません｡ このプログラムを使用するには、PC に Android 用 Windows サブシステムがインストールされていることを確認してください。</value>
   </data>
   <data name="WSANotInstalledWin11" xml:space="preserve">
     <value>WSA のインストールが検出されません｡ このプログラムを使用するには、PC に Android 用 Windows サブシステムがインストールされていることを確認してください。</value>

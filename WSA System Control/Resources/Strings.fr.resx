@@ -162,7 +162,7 @@ Une simple application qui permet de surveiller l'état de WSA, ainsi que de le 
   </data>
   <data name="WSANotInstalledWin10" xml:space="preserve">
     <value>Aucune installation de WSA détectée.
-Le Sous-système Windows pour Android (WSA) n'est pas officiellement pris en charge sur Windows 10.</value>
+Pour utiliser ce programme, assurez-vous que le Sous-système Windows pour Android (WSA) est installé sur votre PC.</value>
   </data>
   <data name="WSANotInstalledWin11" xml:space="preserve">
     <value>Aucune installation de WSA détectée.
