@@ -24,8 +24,6 @@ Requires WSA running Android 13 or higher.
 
 Locale files are located in `WSA System Control/Resources`. The language that is used by WSA System Control is dependent on your Windows display language. If your language isn't yet supported by WSA System Control, it will fallback to English.
 
-I am looking to integrate localization solutions such as Crowdin, but in the meantime you can make a PR with your contribution.
-
 If you want to translate WSA System Control to a language which is not yet supported, use the `WSA System Control/Resources/Strings.resx` file as a base for the translation. Make sure that the file is named in the `Strings.langCode.resx` format e.g. `Strings.ja-JP.resx`.
 
 Future updates to strings will involve updating all translated language files using Google Translate or some other machine translation service. As you may know, these services are not always accurate, so if you see any inaccuracies, please make a pull request!
